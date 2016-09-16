@@ -37,7 +37,7 @@
                     <th>Item Name</th>
                     <th>Categorie</th>
 
-                    <th class="text-right">Remove</th>
+
                 </tr>
                 </thead>
                 <tbody th:each="item : ${itemList}">
@@ -45,7 +45,7 @@
                     <td th:text="${item.itemName}"></td>
                     <td th:text="${item.itemCategory}"></td>
 
-                    <td class="text-right"><a class="btn btn-danger btn-xs" th:href="${#mvc.url('AC#removeAuthor').arg(0, item.id).build()}">Remove</a></td>
+
                 </tr>
                 </tbody>
             </table>

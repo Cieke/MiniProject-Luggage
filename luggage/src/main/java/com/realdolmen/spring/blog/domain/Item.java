@@ -45,11 +45,6 @@ public class Item {
         this.itemCategory = itemCategory;
     }
 
-    public Item() {
-        this.itemName = itemName;
-        this.itemCategory = itemCategory;
-    }
-
     @Override
     public String toString(){
         return "Item{" +
