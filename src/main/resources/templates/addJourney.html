@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <title>The Luggage Helper</title>
+    <link th:href="@{/css/bootstrap-3.0.3.min.css}" rel="stylesheet"/>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="navbar navbar-default">
+    <div class="container">
+
+        <ul class="nav navbar-nav">
+            <li><a th:href="@{/index}">Home</a></li>
+            <li><a th:href="@{/items}">Luggage Items</a></li>
+            <li><a th:href="@{/addItem}">Add Item</a></li>
+            <li><a th:href="@{/addJourney}">Type of Journey</a></li>
+            <li><a th:href="@{/peopleTravelling}">People joining</a></li>
+
+        </ul>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="page-header text-center">
+
+        <h1>under construction</h1>
+
+        <h2> Voor welk type vakantie wil u uw bagage maken?</h2>
+        <h3> gemaakt voor Belgen die vanuit België reizen</h3>
+
+    </div>
+
+
+    <form th:action="@{/addJourney}" method="post" th:object="${journey}">
+       <!-- <div class="form-group" th:class="${#fields.hasErrors('journeyName')}? 'has-error'">
+            <label th:for="${#ids.next('journeyName')}">Geef een naam voor uw vakantie:</label>
+            <input type="text" th:field="*{journeyName}" class="form-control"/>
+            <span th:if="${#fields.hasErrors('journeyName')}" class="help-block" th:errors="*{journeyName}"></span>
+        </div>-->
+
+
+
+
+        aantal dagen: <br/>
+        <!--aantal dagen => item afhankelijk van aantal dagen: boolean-->
+
+
+        transport: <br/>
+        type transport => enum: auto, vliegtuig, boot, bus, trein, fiets !! verschillende per journey mogelijk <br/>
+
+
+        type: => enum verschillende nodig <br/>
+        <select>
+            <option value="relax">relax</option>
+            <option value="sport">sportieve vakantie</option>
+            <option value="ski">skiverlof</option>
+            <option value="strand">zee en strand</option>
+            <option value="wandelen">wandelen</option>
+            <option value="citytrip">citytrip</option>
+        </select>
+
+        <br/>
+        weersomstandigheden: => enum <br/>
+
+        travelzone: => enum <br/>
+
+
+        <button type="submit" class="btn btn-primary">Add Journey</button>
+    </form>
+
+
+
+
+
+    bagage restricties? aantal per persoon? valies/rugzak? geen restricties
+
+    land toevoegen?
+
+</div>
+
+
+
+<script th:src="@{/js/jquery-2.0.2.min.js}"></script>
+<script th:src="@{/js/bootstrap-3.0.3.min.js}"></script>
+</body>
+</html>

@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 
 @Controller
-@RequestMapping({"/journeyType"})
+@RequestMapping({"/addJourney"})
 public class JourneyController {
     @RequestMapping(method = RequestMethod.GET)
-    public String journeyType() {
-        return "journeyType";
+    public String addJourney() {
+        return "addJourney";
     }
 }
