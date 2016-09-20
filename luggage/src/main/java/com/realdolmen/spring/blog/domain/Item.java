@@ -19,8 +19,8 @@ public class Item {
     @NotBlank
     private String itemName;
 
-
-    private String itemCategory;
+    @ManyToOne
+    private Category category;
 
     private String itemColor;
 
@@ -40,12 +40,13 @@ public class Item {
         this.itemName = itemName;
     }
 
-    public String getItemCategory() {
-        return itemCategory;
+
+    public Category getCategory() {
+        return category;
     }
 
-    public void setItemCategory(String itemCategory) {
-        this.itemCategory = itemCategory;
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public String getItemColor() {
@@ -62,7 +63,7 @@ public class Item {
                 "id=" + id +
                 ", itemName='" + itemName + '\'' +
                 ", itemColor'" + itemColor + '\''+
-                ", itemCategory='" + itemCategory + '\'' +
+                ", itemCategory='" + category.getName() + '\'' +
                 '}';
 
 
