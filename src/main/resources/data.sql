@@ -19,3 +19,6 @@ INSERT INTO item (id, category_id, itemName, itemColor) VALUES (4, 2,'Vans','zwa
 INSERT INTO item (id, category_id, itemName, itemColor) VALUES (5, 3,'mascara','zwart');
 INSERT INTO item (id, category_id, itemName, itemColor) VALUES (6, 5,'douchegel','none');
 INSERT INTO item (id, category_id, itemName, itemColor) VALUES (7, 5,'tandenborstel','roos');
+
+insert into journey (id, journeyName, numberDays, transport, travelZone, weather, journeyType)
+    values (1, 'Strandvakantie Mallorca', 10, 'vliegtuig', 'shengen', 'zeer warm', 'strandvakantie');
