@@ -35,6 +35,7 @@
                 <thead>
                 <tr>
                     <th>Item Name</th>
+                    <th>Item Color</th>
                     <th>Categorie</th>
 
 
@@ -43,6 +44,7 @@
                 <tbody th:each="item : ${itemList}">
                 <tr>
                     <td th:text="${item.itemName}"></td>
+                    <td th:text="${item.itemColor}"></td>
                     <td th:text="${item.itemCategory}"></td>
 
 
@@ -53,7 +55,7 @@
         </div>
     </div>
 
-    </div>
+</div>
 
 
 

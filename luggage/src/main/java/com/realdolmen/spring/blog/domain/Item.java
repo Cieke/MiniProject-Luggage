@@ -19,7 +19,10 @@ public class Item {
     @NotBlank
     private String itemName;
 
+
     private String itemCategory;
+
+    private String itemColor;
 
     public Long getId() {
         return id;
@@ -45,11 +48,20 @@ public class Item {
         this.itemCategory = itemCategory;
     }
 
+    public String getItemColor() {
+        return itemColor;
+    }
+
+    public void setItemColor(String itemColor) {
+        this.itemColor = itemColor;
+    }
+
     @Override
     public String toString(){
         return "Item{" +
                 "id=" + id +
                 ", itemName='" + itemName + '\'' +
+                ", itemColor'" + itemColor + '\''+
                 ", itemCategory='" + itemCategory + '\'' +
                 '}';
 
