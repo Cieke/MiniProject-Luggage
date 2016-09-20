@@ -24,7 +24,6 @@ public class ItemController {
     ItemRepository itemRepository;
 
 
-
     @RequestMapping(method = RequestMethod.GET)
     public List<Item> items() {
         return itemRepository.findAll();
