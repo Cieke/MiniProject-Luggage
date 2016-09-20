@@ -9,3 +9,7 @@ insert into Category(id, name) values (6,'slapen');
 
 INSERT INTO item (id, category_id, itemName, itemColor) VALUES (1, 1,'t-shirt','red');
 INSERT INTO item (id, category_id, itemName, itemColor) VALUES (2, 1,'t-shirt','blauw');
+INSERT INTO item (id, category_id, itemName, itemColor) VALUES (3, 2,'pumps','blauw');
+INSERT INTO item (id, category_id, itemName, itemColor) VALUES (4, 2,'Vans','zwart');
+INSERT INTO item (id, category_id, itemName, itemColor) VALUES (5, 3,'mascara','zwart');
+INSERT INTO item (id, category_id, itemName, itemColor) VALUES (6, 5,'douchegel','none');
