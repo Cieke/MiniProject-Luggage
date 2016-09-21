@@ -26,6 +26,9 @@ public class Item {
 
     private Boolean dayDependency;
 
+    @ManyToOne
+    private Transport transport;
+
     public Long getId() {
         return id;
     }
@@ -67,6 +70,14 @@ public class Item {
         this.dayDependency = dayDependency;
     }
 
+    public Transport getTransport() {
+        return transport;
+    }
+
+    public void setTransport(Transport transport) {
+        this.transport = transport;
+    }
+
     @Override
     public String toString(){
         return "Item{" +
@@ -75,6 +86,7 @@ public class Item {
                 ", itemColor'" + itemColor + '\''+
                 ", itemCategory='" + category.getName() + '\'' +
                 ", dayDependency'" + dayDependency + '\''+
+                ", transport'" + transport + '\''+
                 '}';
 
 
