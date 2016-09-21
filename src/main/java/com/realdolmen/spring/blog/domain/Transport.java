@@ -6,7 +6,7 @@ package com.realdolmen.spring.blog.domain;
 public enum Transport {
     voet,
     fiets,
-    autor,
+    auto,
     bus,
     trein,
     vliegtuig,

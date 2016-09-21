@@ -9,7 +9,7 @@ import java.io.Serializable;
  * Created by tywinlannister on 20/09/16.
  */
 @Entity
-public class Journey implements Serializable{
+public class Journey { //implements Serializable
 
 
     @Id
@@ -18,7 +18,7 @@ public class Journey implements Serializable{
     private Long id;
 
     // geef een naam aan uw reis bv strandvakantie Mallorca
-    @Column
+    //@Column
     @NotBlank
     private String journeyName;
 
@@ -38,6 +38,61 @@ public class Journey implements Serializable{
     @Enumerated(EnumType.STRING)
     private JourneyType journeyType;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getJourneyName() {
+        return journeyName;
+    }
+
+    public void setJourneyName(String journeyName) {
+        this.journeyName = journeyName;
+    }
+
+    public Integer getNumberDays() {
+        return numberDays;
+    }
+
+    public void setNumberDays(Integer numberDays) {
+        this.numberDays = numberDays;
+    }
+
+    public TravelZone getTravelZone() {
+        return travelZone;
+    }
+
+    public void setTravelZone(TravelZone travelZone) {
+        this.travelZone = travelZone;
+    }
+
+    public Transport getTransport() {
+        return transport;
+    }
+
+    public void setTransport(Transport transport) {
+        this.transport = transport;
+    }
+
+    public Weather getWeather() {
+        return weather;
+    }
+
+    public void setWeather(Weather weather) {
+        this.weather = weather;
+    }
+
+    public JourneyType getJourneyType() {
+        return journeyType;
+    }
+
+    public void setJourneyType(JourneyType journeyType) {
+        this.journeyType = journeyType;
+    }
 
     @Override
     public String toString() {
@@ -45,10 +100,10 @@ public class Journey implements Serializable{
                 "id="+ id +
                 ", journeyName='" + journeyName + '\'' +
                 ", numberDays='" + numberDays + '\'' +
-                ", travelZone='" + travelZone + '\'' +
-                ", transport='" + transport + '\'' +
-                ", weather='" + weather + '\'' +
-                ", journeyType='" + journeyType + '\'' +
+//                ", travelZone='" + travelZone + '\'' +
+//                ", transport='" + transport + '\'' +
+//                ", weather='" + weather + '\'' +
+//                ", journeyType='" + journeyType + '\'' +
                 '}';
     }
 }

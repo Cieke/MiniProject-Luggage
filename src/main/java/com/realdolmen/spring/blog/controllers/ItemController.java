@@ -17,7 +17,7 @@ import java.util.List;
  */
 
 @Controller
-@RequestMapping("/items")
+@RequestMapping({"/items"})
 public class ItemController {
 
     @Autowired

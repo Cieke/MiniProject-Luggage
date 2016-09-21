@@ -7,7 +7,7 @@ public enum JourneyType {
     relax,
     sport,
     ski,
-    strand,
+    strandvakantie,
     wandelen,
     citytrip,
     spa,
