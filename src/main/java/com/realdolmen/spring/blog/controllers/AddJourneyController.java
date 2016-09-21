@@ -1,8 +1,9 @@
 package com.realdolmen.spring.blog.controllers;
 
 import com.realdolmen.spring.blog.dao.JourneyRepository;
-import com.realdolmen.spring.blog.domain.Item;
+import com.realdolmen.spring.blog.dao.TransportRepository;
 import com.realdolmen.spring.blog.domain.Journey;
+import com.realdolmen.spring.blog.domain.Transport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -25,9 +26,13 @@ public class AddJourneyController {
     @Autowired
     JourneyRepository journeyRepository;
 
+    @Autowired
+    TransportRepository transportRepository;
+
     @RequestMapping(method = RequestMethod.GET)
     public Journey whatever(Model model){
-
+        List<Transport> transportList = transportRepository.findAll();
+        model.addAttribute("TransList",transportList);
         return new Journey();
 
        // return "addJourney";

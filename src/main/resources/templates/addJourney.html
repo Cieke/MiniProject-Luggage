@@ -55,6 +55,15 @@
                 </option>
             </select>
         </div>
+        <div class="form-group" th:class="${#fields.hasErrors('transport')}? 'has-error'">
+            <label th:for="${#ids.next('transport')}">transport?</label>
+            <select id="transport" th:field="*{transport}" class="form-control">
+                <option th:each="listitem: ${TransList}"
+                        th:value="${listitem.id}"
+                        th:text="${listitem.name}">
+                </option>
+            </select>
+        </div>
 
         <!--<div class="form-group" th:class="${#fields.hasErrors('transport')}? 'has-error'">-->
             <!--<label th:for="${#ids.next('transport')}">Welke transportmiddelen zal u gebruiken?</label>-->

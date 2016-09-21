@@ -3,9 +3,6 @@ package com.realdolmen.spring.blog.domain;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by tywinlannister on 20/09/16.
@@ -21,19 +18,21 @@ public class Journey { //implements Serializable
 
 
     //@Column
-  @NotBlank
+    @ NotBlank
     private String journeyName;
 
-// @NotBlank
+   // @NotBlank
     private Integer numberDays;
 
     //where are you going?
     @Enumerated(EnumType.STRING)
     private TravelZone travelZone;
 
-    @Enumerated(EnumType.STRING)
-    @ElementCollection
-    private List<Transport> transport = new ArrayList<>();
+    @ManyToOne
+    private Transport transport;
+//    @Enumerated(EnumType.STRING)
+//    @ElementCollection
+//    private List<Transport> transport = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     private Weather weather;
@@ -71,9 +70,18 @@ public class Journey { //implements Serializable
     public void setTravelZone(TravelZone travelZone) {
         this.travelZone = travelZone;
     }
+//
+//    public List<Transport> getTransport() {
+//        return transport;
+//    }
 
-    public List<Transport> getTransport() {
+
+    public Transport getTransport() {
         return transport;
+    }
+
+    public void setTransport(Transport transport) {
+        this.transport = transport;
     }
 
     public Weather getWeather() {
