@@ -24,6 +24,8 @@ public class Item {
 
     private String itemColor;
 
+    private Boolean dayDependency;
+
     public Long getId() {
         return id;
     }
@@ -57,6 +59,14 @@ public class Item {
         this.itemColor = itemColor;
     }
 
+    public Boolean getDayDependency() {
+        return dayDependency;
+    }
+
+    public void setDayDependency(Boolean dayDependency) {
+        this.dayDependency = dayDependency;
+    }
+
     @Override
     public String toString(){
         return "Item{" +
@@ -64,6 +74,7 @@ public class Item {
                 ", itemName='" + itemName + '\'' +
                 ", itemColor'" + itemColor + '\''+
                 ", itemCategory='" + category.getName() + '\'' +
+                ", dayDependency'" + dayDependency + '\''+
                 '}';
 
 

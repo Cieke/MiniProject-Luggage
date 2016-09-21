@@ -48,33 +48,66 @@
         </div>
         <div class="form-group" th:class="${#fields.hasErrors('travelZone')}? 'has-error'">
             <label th:for="${#ids.next('travelZone')}">Naar welke zone reist u?</label>
-            <input type="text" th:field="*{travelZone}" class="form-control"/>
-            <span th:if="${#fields.hasErrors('travelZone')}" class="help-block" th:errors="*{travelZone}"></span>
+            <select id="travelZone" th:field="*{travelZone}" class="form-control">
+                <option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.TravelZone).values()}"
+                        th:value="${listitem}"
+                        th:text="${listitem}">
+                </option>
+            </select>
         </div>
-        <div class="form-group" th:class="${#fields.hasErrors('transport')}? 'has-error'">
-            <label th:for="${#ids.next('transport')}">Welke transportmiddelen zal u gebruiken?</label>
-            <input type="text" th:field="*{transport}" class="form-control"/>
-            <span th:if="${#fields.hasErrors('transport')}" class="help-block" th:errors="*{transport}"></span>
-        </div>
+
+        <!--<div class="form-group" th:class="${#fields.hasErrors('transport')}? 'has-error'">-->
+            <!--<label th:for="${#ids.next('transport')}">Welke transportmiddelen zal u gebruiken?</label>-->
+            <!--&lt;!&ndash;<select id="transport" th:field="*{transport}" class="form-control">&ndash;&gt;-->
+                <!--<input type="checkbox" id="transport" th:field="*{transport}"-->
+                       <!--th:each="listitem: ${T(com.realdolmen.spring.blog.domain.Transport).values()}"-->
+                        <!--th:value="${listitem}"-->
+                        <!--th:text="${listitem}">-->
+
+                <!--</input>-->
+
+            <!--&lt;!&ndash;</select>&ndash;&gt;-->
+        <!--</div>-->
+
+
+
+
+
+            <!--<div class="form-group" th:class="${#fields.hasErrors('transport')}? 'has-error'">-->
+            <!--<label th:for="${#ids.next('transport')}">Welke transportmiddelen zal u gebruiken?</label>-->
+            <!--<input type="checkbox" id="transport" th:field="*{transport}" class="form-control">-->
+                <!--<option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.Transport).values()}"-->
+                        <!--th:value="${listitem}"-->
+                        <!--th:text="${listitem}">-->
+                <!--</option>-->
+            <!--</input>-->
+        <!--</div>-->
+
+
         <div class="form-group" th:class="${#fields.hasErrors('weather')}? 'has-error'">
             <label th:for="${#ids.next('weather')}">Welke zijn de verwachte weersomstandigheden?</label>
-            <input type="text" th:field="*{weather}" class="form-control"/>
-            <span th:if="${#fields.hasErrors('weather')}" class="help-block" th:errors="*{weather}"></span>
+            <select id="weather" th:field="*{weather}" class="form-control">
+                <option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.Weather).values()}"
+                        th:value="${listitem}"
+                        th:text="${listitem}">
+                </option>
+            </select>
         </div>
+
         <div class="form-group" th:class="${#fields.hasErrors('journeyType')}? 'has-error'">
-            <label th:for="${#ids.next('journeyType')}">Type vakantie : </label>
-            <input type="text" th:field="*{journeyType}" class="form-control"/>
-            <span th:if="${#fields.hasErrors('journeyType')}" class="help-block" th:errors="*{journeyType}"></span>
+            <label th:for="${#ids.next('journeyType')}">Type vakantie :</label>
+            <select id="journeyType" th:field="*{journeyType}" class="form-control">
+                <option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.JourneyType).values()}"
+                        th:value="${listitem}"
+                        th:text="${listitem}">
+                </option>
+            </select>
         </div>
 
         <br/>
 
         <button type="submit" class="btn btn-primary">Add Journey</button>
     </form>
-
-
-
-
 
 
 </div>

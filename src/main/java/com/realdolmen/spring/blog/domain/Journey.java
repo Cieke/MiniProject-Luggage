@@ -4,6 +4,8 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by tywinlannister on 20/09/16.
@@ -17,9 +19,9 @@ public class Journey { //implements Serializable
     @Column(name = "id")
     private Long id;
 
-    // geef een naam aan uw reis bv strandvakantie Mallorca
+
     //@Column
-  //@NotBlank
+  @NotBlank
     private String journeyName;
 
 // @NotBlank
@@ -30,14 +32,14 @@ public class Journey { //implements Serializable
     private TravelZone travelZone;
 
     @Enumerated(EnumType.STRING)
-    private Transport transport;
+    @ElementCollection
+    private List<Transport> transport = new ArrayList<>();
 
     @Enumerated(EnumType.STRING)
     private Weather weather;
 
     @Enumerated(EnumType.STRING)
     private JourneyType journeyType;
-
     public Long getId() {
         return id;
     }
@@ -70,12 +72,8 @@ public class Journey { //implements Serializable
         this.travelZone = travelZone;
     }
 
-    public Transport getTransport() {
+    public List<Transport> getTransport() {
         return transport;
-    }
-
-    public void setTransport(Transport transport) {
-        this.transport = transport;
     }
 
     public Weather getWeather() {
