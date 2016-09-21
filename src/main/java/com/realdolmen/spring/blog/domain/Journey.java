@@ -19,10 +19,10 @@ public class Journey { //implements Serializable
 
     // geef een naam aan uw reis bv strandvakantie Mallorca
     //@Column
-    @NotBlank
+   // @NotBlank
     private String journeyName;
 
-    @NotBlank
+  //  @NotBlank
     private Integer numberDays;
 
     //where are you going?
@@ -100,10 +100,10 @@ public class Journey { //implements Serializable
                 "id="+ id +
                 ", journeyName='" + journeyName + '\'' +
                 ", numberDays='" + numberDays + '\'' +
-//                ", travelZone='" + travelZone + '\'' +
-//                ", transport='" + transport + '\'' +
-//                ", weather='" + weather + '\'' +
-//                ", journeyType='" + journeyType + '\'' +
+                ", travelZone='" + travelZone + '\'' +
+                ", transport='" + transport + '\'' +
+                ", weather='" + weather + '\'' +
+                ", journeyType='" + journeyType + '\'' +
                 '}';
     }
 }

@@ -25,8 +25,6 @@ public class JourneyController {
         return journeyRepository.findAll();
     }
 
-//    @RequestMapping(method = RequestMethod.GET)
-//    public String journeys() {
-//        return "journeys";
-//    }
+
+
 }

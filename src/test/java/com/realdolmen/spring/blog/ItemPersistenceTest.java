@@ -27,4 +27,6 @@ public class ItemPersistenceTest {
         em.persist(item);
         Assert.assertNotNull(item.getId());
     }
+
+    // test op add journey toe voegen
 }

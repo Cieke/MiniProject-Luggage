@@ -1,6 +1,5 @@
 package com.realdolmen.spring.blog.controllers;
 
-//import com.realdolmen.spring.blog.dao.JourneyRepository;
 import com.realdolmen.spring.blog.dao.JourneyRepository;
 import com.realdolmen.spring.blog.domain.Item;
 import com.realdolmen.spring.blog.domain.Journey;
@@ -25,18 +24,14 @@ public class AddJourneyController {
     @Autowired
     JourneyRepository journeyRepository;
 
-//    @RequestMapping(method = RequestMethod.GET)
-//    public List<Journey> journey() {
-//        return journeyRepository.findAll();
-//    }
 
    @RequestMapping(method = RequestMethod.GET)
    @Transactional
-    public String addJourney(@Valid Journey journey, BindingResult errors) {
+    public String saveJourney(@Valid Journey journey, BindingResult errors) {
        if(errors.hasErrors()){
            return "addJourney";
        }
-    //   journeyRepository.save(journey);
-       return "addJourney";
+       journeyRepository.save(journey);
+       return "redirect:/journeys";
     }
 }

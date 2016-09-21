@@ -44,9 +44,6 @@
                     <input type="text" th:field="*{itemColor}" class="form-control"/>
                     <span th:if="${#fields.hasErrors('itemColor')}" class="help-block" th:errors="*{itemColor}"></span>
                 </div>
-
-
-
                 <div class="form-group" th:class="${#fields.hasErrors('category.name')}? 'has-error'">
                     <label th:for="${#ids.next('category.name')}">Item Category:</label>
                     <select id="category" th:field="*{category}" class="form-control">

@@ -16,7 +16,7 @@
             <li><a th:href="@{/index}">Home</a></li>
             <li><a th:href="@{/items}">Luggage Items</a></li>
             <li><a th:href="@{/addItem}">Add Item</a></li>
-            <li><a th:href="@{/addJourney}">Type of Journey</a></li>
+            <li><a th:href="@{/journeys}">Journeys</a></li>
             <li><a th:href="@{/peopleTravelling}">People joining</a></li>
 
         </ul>
@@ -33,76 +33,73 @@
         <h3> gemaakt voor Belgen die vanuit België reizen</h3>
 
     </div>
-    <div class="row">
-        <div class="col-lg-12">
-            <h4>Reizen die u al aanmaakte : </h4>
-            <table class="table table-striped table-hover">
-                <thead>
-                <tr>
-                    <th>Journey Name</th>
-                    <th>Number of Days</th>
-                    <!--<th>Categorie</th>-->
 
-                </tr>
-                </thead>
-                <tbody th:each="journey : ${journeyList}">
-                <tr>
-                    <td th:text="${journey.journeyName}"></td>
-                    <td th:text="${journey.numberDays}"></td>
-                    <!--<td th:text="${item.category.getName()}"></td>-->
-
-
-                </tr>
-                </tbody>
-            </table>
-
-        </div>
-    </div>
 
     <form th:action="@{/addJourney}" method="post" th:object="${journey}">
-        <!--<div class="form-group" th:class="${#fields.hasErrors('journeyName')}? 'has-error'">-->
-            <!--<label th:for="${#ids.next('journeyName')}">Geef een naam voor uw vakantie:</label>-->
-            <!--<input type="text" th:field="*{journeyName}" class="form-control"/>-->
-            <!--<span th:if="${#fields.hasErrors('journeyName')}" class="help-block" th:errors="*{journeyName}"></span>-->
-        <!--</div>-->
+        <div class="form-group" th:class="${#fields.hasErrors('journeyName')}? 'has-error'">
+            <label th:for="${#ids.next('journeyName')}">Geef een naam voor uw vakantie:</label>
+            <input type="text" th:field="*{journeyName}" class="form-control"/>
+            <span th:if="${#fields.hasErrors('journeyName')}" class="help-block" th:errors="*{journeyName}"></span>
+        </div>
+        <div class="form-group" th:class="${#fields.hasErrors('numberDays')}? 'has-error'">
+            <label th:for="${#ids.next('numberDays')}">Hoe lang duurt uw vakantie? (in dagen):</label>
+            <input type="text" th:field="*{numberDays}" class="form-control"/>
+            <span th:if="${#fields.hasErrors('numberDays')}" class="help-block" th:errors="*{numberDays}"></span>
+        </div>
+        <div class="form-group" th:class="${#fields.hasErrors('travelZone')}? 'has-error'">
+            <label th:for="${#ids.next('travelZone')}">Naar welke zone reist u?</label>
+            <input type="text" th:field="*{travelZone}" class="form-control"/>
+            <span th:if="${#fields.hasErrors('travelZone')}" class="help-block" th:errors="*{travelZone}"></span>
+        </div>
+        <div class="form-group" th:class="${#fields.hasErrors('transport')}? 'has-error'">
+            <label th:for="${#ids.next('transport')}">Welke transportmiddelen zal u gebruiken?</label>
+            <input type="text" th:field="*{transport}" class="form-control"/>
+            <span th:if="${#fields.hasErrors('transport')}" class="help-block" th:errors="*{transport}"></span>
+        </div>
+        <div class="form-group" th:class="${#fields.hasErrors('weather')}? 'has-error'">
+            <label th:for="${#ids.next('weather')}">Welke zijn de verwachte weersomstandigheden?</label>
+            <input type="text" th:field="*{weather}" class="form-control"/>
+            <span th:if="${#fields.hasErrors('weather')}" class="help-block" th:errors="*{weather}"></span>
+        </div>
+        <div class="form-group" th:class="${#fields.hasErrors('journeyType')}? 'has-error'">
+            <label th:for="${#ids.next('journeyType')}">Type vakantie : </label>
+            <input type="text" th:field="*{journeyType}" class="form-control"/>
+            <span th:if="${#fields.hasErrors('journeyType')}" class="help-block" th:errors="*{journeyType}"></span>
+        </div>
+
+        <br/>
 
         <button type="submit" class="btn btn-primary">Add Journey</button>
     </form>
 
 
-        aantal dagen: <br/>
-        <!--aantal dagen => item afhankelijk van aantal dagen: boolean-->
+        <!--aantal dagen: <br/>-->
+        <!--&lt;!&ndash;aantal dagen => item afhankelijk van aantal dagen: boolean&ndash;&gt;-->
 
 
-        transport: <br/>
-        type transport => enum: auto, vliegtuig, boot, bus, trein, fiets !! verschillende per journey mogelijk <br/>
+        <!--transport: <br/>-->
+        <!--type transport => enum: auto, vliegtuig, boot, bus, trein, fiets !! verschillende per journey mogelijk <br/>-->
 
 
-        type: => enum verschillende nodig <br/>
-        <select>
-            <option value="relax">relax</option>
-            <option value="sport">sportieve vakantie</option>
-            <option value="ski">skiverlof</option>
-            <option value="strand">zee en strand</option>
-            <option value="wandelen">wandelen</option>
-            <option value="citytrip">citytrip</option>
-        </select>
+        <!--type: => enum verschillende nodig <br/>-->
+        <!--<select>-->
+            <!--<option value="relax">relax</option>-->
+            <!--<option value="sport">sportieve vakantie</option>-->
+            <!--<option value="ski">skiverlof</option>-->
+            <!--<option value="strand">zee en strand</option>-->
+            <!--<option value="wandelen">wandelen</option>-->
+            <!--<option value="citytrip">citytrip</option>-->
+        <!--</select>-->
 
-        <br/>
-        weersomstandigheden: => enum <br/>
+        <!--<br/>-->
+        <!--weersomstandigheden: => enum <br/>-->
 
-        travelzone: => enum <br/>
-
-
+        <!--travelzone: => enum <br/>-->
 
 
+    <!--bagage restricties? aantal per persoon? valies/rugzak? geen restricties-->
 
-
-
-
-    bagage restricties? aantal per persoon? valies/rugzak? geen restricties
-
-    land toevoegen?
+    <!--land toevoegen?-->
 
 </div>
 
