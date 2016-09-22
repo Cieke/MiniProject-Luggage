@@ -10,33 +10,45 @@ insert into Category(id, name) values (7, 'electronics');
 insert into Category(id, name) values (8, 'medication');
 insert into Category(id, name) values (9, 'accessoiries');
 insert into Category(id, name) values (10, 'documents');
+insert into Category(id, name) values (11, 'equipment');
 
 insert into Transport(id, name) values (1, 'none');
-insert into Transport(id, name) values (8, 'on foot');
 insert into Transport(id, name) values (2, 'bicycle');
 insert into Transport(id, name) values (3, 'car');
 insert into Transport(id, name) values (4, 'bus');
 insert into Transport(id, name) values (5, 'train');
 insert into Transport(id, name) values (6, 'airplane');
 insert into Transport(id, name) values (7, 'boat');
+insert into Transport(id, name) values (8, 'on foot');
 
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (2, 1,'t-shirt','blue', 1, true);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (1, 1,'t-shirt','red', 1, true);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (3, 2,'pumps','red',1, false);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (4, 2,'Vans','black',8, false);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (5, 3,'mascara','black',1, false);
-INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (6, 5,'showergel','none',2, false);
+INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (6, 5,'showergel','none',1, false);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (7, 5,'toothbrush','purple', 1, false);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (8, 1,'underwear','pink', 1, true);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (9, 10,'drivers license','none', 3, false);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (10, 8,'sea sickness tablets','none', 7, true);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (11, 6,'sleeping mask','none', 1, false);
+INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (12, 11,'skis and sticks','none', 1, false);
+INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (13, 1,'cycling suit','green', 2, false);
+INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (14, 2,'cycling shoes','black', 2, false);
+INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (15, 2,'walking shoes','black', 8, false);
+INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (16, 8,'compeed','none', 8, false);
 
 insert into journey (id, journeyName, numberDays, transport_id, travelZone, weather, journeyType)
-    values (1, 'Beachholliday Mallorca', 10, 8, 'abroad_shengen', 'very_warm', 'beach');
+    values (1, 'Beachholliday Mallorca', 10, 6, 'abroad_shengen', 'very_warm', 'beach');
 insert into journey (id, journeyName, numberDays, transport_id, travelZone, weather, journeyType)
-    values (2, 'Ski in Sölden', 7, 5, 'abroad_shengen', 'cold_snow', 'ski');
+    values (2, 'Ski in Sölden', 7, 3, 'abroad_shengen', 'cold_snow', 'ski');
 insert into journey (id, journeyName, numberDays, transport_id, travelZone, weather, journeyType)
     values (3, 'Citytrip New York', 5, 2, 'non_shengen', 'unknown', 'citytrip');
 insert into journey (id, journeyName, numberDays, transport_id, travelZone, weather, journeyType)
     values (4, 'Graspop Metal Meeting', 3, 3, 'domestic', 'unknown', 'festival');
+insert into journey (id, journeyName, numberDays, transport_id, travelZone, weather, journeyType)
+    values (5, 'Cruise in the Carribean', 10, 7, 'non_shengen', 'very_warm', 'beach');
+insert into journey (id, journeyName, numberDays, transport_id, travelZone, weather, journeyType)
+    values (6, 'Mont Ventoux cycling', 10, 2, 'non_shengen', 'very_warm', 'sport');
+insert into journey (id, journeyName, numberDays, transport_id, travelZone, weather, journeyType)
+    values (7, 'Santiago de Compostella', 20, 8, 'abroad_shengen', 'very_warm', 'sport');
