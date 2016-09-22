@@ -33,7 +33,7 @@ INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDepende
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency) VALUES (11, 6,'sleeping mask','none', 1, false);
 
 insert into journey (id, journeyName, numberDays, transport_id, travelZone, weather, journeyType)
-    values (1, 'Beachholliday Mallorca', 10, 4, 'abroad_shengen', 'very_warm', 'beach');
+    values (1, 'Beachholliday Mallorca', 10, 8, 'abroad_shengen', 'very_warm', 'beach');
 insert into journey (id, journeyName, numberDays, transport_id, travelZone, weather, journeyType)
     values (2, 'Ski in Sölden', 7, 5, 'abroad_shengen', 'cold_snow', 'ski');
 insert into journey (id, journeyName, numberDays, transport_id, travelZone, weather, journeyType)

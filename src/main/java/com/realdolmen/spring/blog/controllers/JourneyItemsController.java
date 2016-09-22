@@ -1,7 +1,9 @@
 package com.realdolmen.spring.blog.controllers;
 
+import com.realdolmen.spring.blog.dao.ItemRepository;
 import com.realdolmen.spring.blog.dao.JourneyRepository;
 import com.realdolmen.spring.blog.domain.Category;
+import com.realdolmen.spring.blog.domain.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,15 +25,30 @@ public class JourneyItemsController {
     @Autowired
     JourneyRepository journeyRepository;
 
+    @Autowired
+    ItemRepository itemRepository;
+
+
     @RequestMapping(method = RequestMethod.GET)
+    public String journeyItems(Model model, @RequestParam(value = "id") Long id) {
+        Journey j = journeyRepository.findOne(id);
+
+        System.out.println(j.getTransport().getName());
+
+        List<Item> items = itemRepository.findByTransport_id(j.getTransport().getId());
 
 
-        public String journeyItems(Model model, @RequestParam(value = "id") Long id) {
 
-            Journey j = journeyRepository.findOne(id);
-            model.addAttribute("JourneyDetails",j);
+        model.addAttribute("JourneyDetails",j);
 
+        model.addAttribute("itemList",items);
         return "journeyItems";
         }
 
+
 }
+
+
+
+
+
