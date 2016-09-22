@@ -40,7 +40,7 @@
         <h3>You need to pack the following items:</h3>
     </div>
 
-
+    <!--SELECT * FROM luggage.item where transport_id=7 or transport_id=1 and journeyType_id=10 or journeyType_id=3;-->
 
     <div class="row">
         <div class="col-lg-12">
@@ -67,7 +67,7 @@
                     <td th:text="${item.category.getName()}"></td>
                     <td th:text="${item.transport.getName()}"></td>
                     <td th:text="${item.dayDependency}"></td>
-                    <td>type of journey eg: beach = bathing suit</td>
+                    <td th:text="${item.journeyType.getName()}"></td>
                     <td>Weather Conditions eg: raining: raincoat</td>
                     <td>Travel Zone eg: documents: passport</td>
                 </tr>

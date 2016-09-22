@@ -1,8 +1,10 @@
 package com.realdolmen.spring.blog.controllers;
 
 import com.realdolmen.spring.blog.dao.JourneyRepository;
+import com.realdolmen.spring.blog.dao.JourneyTypeRepository;
 import com.realdolmen.spring.blog.dao.TransportRepository;
 import com.realdolmen.spring.blog.domain.Journey;
+import com.realdolmen.spring.blog.domain.JourneyType;
 import com.realdolmen.spring.blog.domain.Transport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,6 +30,8 @@ public class AddJourneyController {
 
     @Autowired
     TransportRepository transportRepository;
+    @Autowired
+    JourneyTypeRepository journeyTypeRepository;
 
     @RequestMapping(method = RequestMethod.GET)
     public Journey whatever(Model model){
@@ -40,6 +44,8 @@ public class AddJourneyController {
     private void generateDropDown(Model model) {
         List<Transport> transportList = transportRepository.findAll();
         model.addAttribute("TransList",transportList);
+        List<JourneyType> journeyTypeList = journeyTypeRepository.findAll();
+        model.addAttribute("JourneyTypeList",journeyTypeList);
     }
 
 

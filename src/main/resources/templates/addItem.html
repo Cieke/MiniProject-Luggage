@@ -55,7 +55,7 @@
 
 
                 <div class="form-group" th:class="${#fields.hasErrors('transport.name')}? 'has-error'">
-                    <label th:for="${#ids.next('transport.name')}">Is this item transport related?</label>
+                    <label th:for="${#ids.next('transport.name')}">Type of transportation this item can be related to:</label>
                     <select id="transport" th:field="*{transport}" class="form-control">
                         <option th:each="listitem: ${TransList}"
                                 th:value="${listitem.id}"
@@ -63,11 +63,21 @@
                         </option>
                     </select>
                 </div>
+                <div class="form-group" th:class="${#fields.hasErrors('journeyType')}? 'has-error'">
+                    <label th:for="${#ids.next('journeyType')}">Type of journey this item can be related to:</label>
+                    <select id="journeyType" th:field="*{journeyType}" class="form-control">
+                        <option th:each="listitem: ${JourneyTypeList}"
+                                th:value="${listitem.id}"
+                                th:text="${listitem.name}">
+                        </option>
+                    </select>
+                </div>
+
 
                 <div>Is this item travel zone dependend?</div>
 
                <div> Is this item dependend on weather conditions?</div>
-                <div>Is this item dependend on the type of journey?</div>
+
                 <!--<div class="form-group" th:class="${#fields.hasErrors('dayDependency')}? 'has-error'">-->
                     <!--<label th:for="${#ids.next('dayDependency')}">dayDependency:</label>-->
                     <!--<input type="text" th:field="*{dayDependency}" class="form-control"/>-->

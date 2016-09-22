@@ -22,6 +22,9 @@ public class Item {
     @ManyToOne
     private Category category;
 
+    @ManyToOne
+    private JourneyType journeyType;
+
     private String itemColor;
 
     private Boolean dayDependency;
@@ -78,6 +81,14 @@ public class Item {
         this.transport = transport;
     }
 
+    public JourneyType getJourneyType() {
+        return journeyType;
+    }
+
+    public void setJourneyType(JourneyType journeyType) {
+        this.journeyType = journeyType;
+    }
+
     @Override
     public String toString(){
         return "Item{" +
@@ -87,6 +98,7 @@ public class Item {
                 ", itemCategory='" + category.getName() + '\'' +
                 ", dayDependency'" + dayDependency + '\''+
                 ", transport'" + transport + '\''+
+                ", journeyType='" + journeyType + '\'' +
                 '}';
 
 

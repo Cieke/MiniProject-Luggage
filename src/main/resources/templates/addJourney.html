@@ -65,15 +65,15 @@
                 </option>
             </select>
         </div>
-        <!--<div class="form-group" th:class="${#fields.hasErrors('journeyType')}? 'has-error'">
+        <div class="form-group" th:class="${#fields.hasErrors('journeyType')}? 'has-error'">
                    <label th:for="${#ids.next('journeyType')}">Type of journey :</label>
                    <select id="journeyType" th:field="*{journeyType}" class="form-control">
-                       <option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.JourneyType).values()}"
-                               th:value="${listitem}"
-                               th:text="${listitem}">
+                       <option th:each="listitem: ${JourneyTypeList}"
+                               th:value="${listitem.id}"
+                               th:text="${listitem.name}">
                        </option>
                    </select>
-        </div>-->
+        </div>
 
 
 

@@ -2,9 +2,11 @@ package com.realdolmen.spring.blog.controllers;
 
 import com.realdolmen.spring.blog.dao.CategoryRepository;
 import com.realdolmen.spring.blog.dao.ItemRepository;
+import com.realdolmen.spring.blog.dao.JourneyTypeRepository;
 import com.realdolmen.spring.blog.dao.TransportRepository;
 import com.realdolmen.spring.blog.domain.Category;
 import com.realdolmen.spring.blog.domain.Item;
+import com.realdolmen.spring.blog.domain.JourneyType;
 import com.realdolmen.spring.blog.domain.Transport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -34,6 +36,9 @@ public class AddItemController {
     @Autowired
     TransportRepository transportRepository;
 
+    @Autowired
+    JourneyTypeRepository journeyTypeRepository;
+
     @RequestMapping(method = RequestMethod.GET)
     public Item register(Model model){
         prepareDropDows(model);
@@ -46,6 +51,8 @@ public class AddItemController {
         model.addAttribute("CatList",categoryList); //CatList: key, categoryList= value
         List<Transport> transportList = transportRepository.findAll();
         model.addAttribute("TransList",transportList);
+        List<JourneyType> journeyTypeList = journeyTypeRepository.findAll();
+        model.addAttribute("JourneyTypeList",journeyTypeList);
 
     }
 
