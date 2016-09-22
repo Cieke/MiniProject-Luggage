@@ -4,7 +4,7 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <title>Journey List</title>
+    <title>Items you need to pack</title>
     <link th:href="@{/css/bootstrap-3.0.3.min.css}" rel="stylesheet"/>
     <link th:href="@{/css/styles.css}" rel="stylesheet"/>
 </head>
@@ -27,39 +27,12 @@
     <div class="page-header text-center">
         <h1><span>Your </span><span class="cie-green">Luggage</span> Friend</h1>
         <p class="lead">I am going away and I need to pack </p>
-
     </div>
 
-    <div class="row">
-        <div class="col-lg-12">
-            <h4>Created journeys : </h4>
-            <table class="table table-striped table-hover">
-                <thead>
-                <tr>
-                    <th>Journey Name</th>
-                    <th>Number of Days</th>
-                    <th>Travel Zone</th>
-                    <th>Transport</th>
-                    <th>Weather conditions</th>
-                    <th>Type of Journey</th>
-
-                </tr>
-                </thead>
-                <tbody th:each="journey : ${journeyList}">
-                <tr>
-
-                    <td><a th:text="${journey.journeyName}" th:href="@{/journeyItems(id=${journey.id})}"></a></td>
-                    <td th:text="${journey.numberDays}"></td>
-                    <td th:text="${journey.travelZone}"></td>
-                    <td th:text="${journey.transport.getName()}"></td>
-                    <td th:text="${journey.weather}"></td>
-                    <td th:text="${journey.journeyType}"></td>
-
-                </tr>
-                </tbody>
-            </table>
-            <a class="btn btn-primary" th:href="@{/addJourney}">Add New Journey</a>
-        </div>
+    <div>
+        <h3>For {name of journey} </h3>
+        <h4>with transport type: {name transport type}</h4>
+        <h3>You need to pack the following items:</h3>
     </div>
 
 

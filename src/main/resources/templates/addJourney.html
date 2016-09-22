@@ -27,27 +27,28 @@
 <div class="container">
     <div class="page-header text-center">
 
-        <h1>under construction</h1>
+        <h1><span>Your </span><span class="cie-green">Luggage</span> Friend</h1>
+        <p class="lead">I am going away and I need to pack </p>
 
-        <h2> Voor welk type vakantie wil u uw bagage maken?</h2>
-        <h3> gemaakt voor Belgen die vanuit België reizen</h3>
+        <h3> For what type of journey do you want to pack? </h3>
+
 
     </div>
 
 
     <form th:action="@{/addJourney}" method="post" th:object="${journey}">
         <div class="form-group" th:class="${#fields.hasErrors('journeyName')}? 'has-error'">
-            <label th:for="${#ids.next('journeyName')}">Geef een naam voor uw vakantie:</label>
+            <label th:for="${#ids.next('journeyName')}">Add a journey name:</label>
             <input type="text" th:field="*{journeyName}" class="form-control"/>
             <span th:if="${#fields.hasErrors('journeyName')}" class="help-block" th:errors="*{journeyName}"></span>
         </div>
         <div class="form-group" th:class="${#fields.hasErrors('numberDays')}? 'has-error'">
-            <label th:for="${#ids.next('numberDays')}">Hoe lang duurt uw vakantie? (in dagen):</label>
+            <label th:for="${#ids.next('numberDays')}">Number of days :</label>
             <input type="text" th:field="*{numberDays}" class="form-control"/>
             <span th:if="${#fields.hasErrors('numberDays')}" class="help-block" th:errors="*{numberDays}"></span>
         </div>
         <div class="form-group" th:class="${#fields.hasErrors('travelZone')}? 'has-error'">
-            <label th:for="${#ids.next('travelZone')}">Naar welke zone reist u?</label>
+            <label th:for="${#ids.next('travelZone')}">Where are you travelling to?</label>
             <select id="travelZone" th:field="*{travelZone}" class="form-control">
                 <option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.TravelZone).values()}"
                         th:value="${listitem}"
@@ -56,7 +57,7 @@
             </select>
         </div>
         <div class="form-group" th:class="${#fields.hasErrors('transport')}? 'has-error'">
-            <label th:for="${#ids.next('transport')}">transport?</label>
+            <label th:for="${#ids.next('transport')}">Which type of transport will you be using?</label>
             <select id="transport" th:field="*{transport}" class="form-control">
                 <option th:each="listitem: ${TransList}"
                         th:value="${listitem.id}"
@@ -94,7 +95,7 @@
 
 
         <div class="form-group" th:class="${#fields.hasErrors('weather')}? 'has-error'">
-            <label th:for="${#ids.next('weather')}">Welke zijn de verwachte weersomstandigheden?</label>
+            <label th:for="${#ids.next('weather')}">What will be the weather conditions?</label>
             <select id="weather" th:field="*{weather}" class="form-control">
                 <option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.Weather).values()}"
                         th:value="${listitem}"
@@ -104,7 +105,7 @@
         </div>
 
         <div class="form-group" th:class="${#fields.hasErrors('journeyType')}? 'has-error'">
-            <label th:for="${#ids.next('journeyType')}">Type vakantie :</label>
+            <label th:for="${#ids.next('journeyType')}">Type of journey :</label>
             <select id="journeyType" th:field="*{journeyType}" class="form-control">
                 <option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.JourneyType).values()}"
                         th:value="${listitem}"

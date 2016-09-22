@@ -4,16 +4,16 @@ package com.realdolmen.spring.blog.domain;
  * Created by tywinlannister on 20/09/16.
  */
 public enum Weather {
-    zeer_warm,
+    very_warm,
     warm,
-    normaal,
-    koud,
-    zeer_koud,
-    warm_regen,
-    koud_regen,
-    warm_sneeuw,
-    koud_sneeuw,
-    onbekend;
+    normal,
+    cold,
+    very_cold,
+    warm_rainy,
+    cold_rainy,
+    warm_snow,
+    cold_snow,
+    unknown;
 
 
 }

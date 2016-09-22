@@ -2,8 +2,11 @@ package com.realdolmen.spring.blog.controllers;
 
 import com.realdolmen.spring.blog.dao.CategoryRepository;
 import com.realdolmen.spring.blog.dao.ItemRepository;
+import com.realdolmen.spring.blog.dao.TransportRepository;
 import com.realdolmen.spring.blog.domain.Category;
 import com.realdolmen.spring.blog.domain.Item;
+import com.realdolmen.spring.blog.domain.Journey;
+import com.realdolmen.spring.blog.domain.Transport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,12 +32,19 @@ public class AddItemController {
     @Autowired
     CategoryRepository categoryRepository;
 
+    @Autowired
+    TransportRepository transportRepository;
+
     @RequestMapping(method = RequestMethod.GET)
     public Item register(Model model){
         List<Category> categoryList= categoryRepository.findAll();
         model.addAttribute("CatList",categoryList); //CatList: key, categoryList= value
+        List<Transport> transportList = transportRepository.findAll();
+        model.addAttribute("TransList",transportList);
+
         return new Item();
     }
+
 
     @RequestMapping(method = RequestMethod.POST)
     @Transactional
