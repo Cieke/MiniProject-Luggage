@@ -30,9 +30,10 @@
     </div>
 
     <div>
-        <h3 th:text="${JourneyDetails.journeyName}"> </h3>
-        <h4>with transport type: </h4>
-        <h4 th:text="${JourneyDetails.transport.getName()}"></h4>
+        <h3> For your trip:
+            <span class="cie-green" th:text="${JourneyDetails.journeyName}"> </span></h3>
+        <h4>With transport type:
+            <span class="cie-green" th:text="${JourneyDetails.transport.getName()}"> </span></h4>
         <h3>You need to pack the following items:</h3>
     </div>
 
