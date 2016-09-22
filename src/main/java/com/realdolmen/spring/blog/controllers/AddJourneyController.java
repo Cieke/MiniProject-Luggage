@@ -31,18 +31,23 @@ public class AddJourneyController {
 
     @RequestMapping(method = RequestMethod.GET)
     public Journey whatever(Model model){
-        List<Transport> transportList = transportRepository.findAll();
-        model.addAttribute("TransList",transportList);
+        generateDropDown(model);
         return new Journey();
 
        // return "addJourney";
     }
 
+    private void generateDropDown(Model model) {
+        List<Transport> transportList = transportRepository.findAll();
+        model.addAttribute("TransList",transportList);
+    }
 
-   @RequestMapping(method = RequestMethod.POST)
+
+    @RequestMapping(method = RequestMethod.POST)
    @Transactional
-    public String saveJourney(@Valid Journey journey, BindingResult errors) {
+    public String saveJourney(Model model, @Valid Journey journey, BindingResult errors) {
        if(errors.hasErrors()){
+           generateDropDown(model);
            return "addJourney";
        }
        journeyRepository.save(journey);

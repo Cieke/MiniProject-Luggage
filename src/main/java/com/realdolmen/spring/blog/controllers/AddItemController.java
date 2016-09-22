@@ -37,19 +37,25 @@ public class AddItemController {
 
     @RequestMapping(method = RequestMethod.GET)
     public Item register(Model model){
+        prepareDropDows(model);
+
+        return new Item();
+    }
+
+    private void prepareDropDows(Model model) {
         List<Category> categoryList= categoryRepository.findAll();
         model.addAttribute("CatList",categoryList); //CatList: key, categoryList= value
         List<Transport> transportList = transportRepository.findAll();
         model.addAttribute("TransList",transportList);
-
-        return new Item();
     }
 
 
     @RequestMapping(method = RequestMethod.POST)
     @Transactional
-    public String saveItem(@Valid Item item, BindingResult errors){
+    public String saveItem(Model model, @Valid Item item, BindingResult errors){
+
         if(errors.hasErrors()){
+            prepareDropDows(model);
             return "additem";
         }
         itemRepository.save(item);
