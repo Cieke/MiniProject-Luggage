@@ -14,7 +14,7 @@
 
         <ul class="nav navbar-nav">
             <li><a th:href="@{/index}">Home</a></li>
-            <li><a th:href="@{/items}">Luggage Items</a></li>
+            <li><a th:href="@{/items}">Database Items</a></li>
             <li><a th:href="@{/addItem}">Add Item</a></li>
             <li><a th:href="@{/journeys}">Journeys</a></li>
             <li><a th:href="@{/peopleTravelling}">People joining</a></li>
@@ -53,7 +53,7 @@
                     <td th:text="${journey.travelZone}"></td>
                     <td th:text="${journey.transport.getName()}"></td>
                     <td th:text="${journey.weather}"></td>
-                    <td th:text="${journey.journeyType}"></td>
+                    <td th:text="${journey.journeyType.getName()}"></td>
 
                 </tr>
                 </tbody>

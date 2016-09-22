@@ -14,7 +14,7 @@
 
         <ul class="nav navbar-nav">
             <li><a th:href="@{/index}">Home</a></li>
-            <li><a th:href="@{/items}">Luggage Items</a></li>
+            <li><a th:href="@{/items}">Database Items</a></li>
             <li><a th:href="@{/addItem}">Add Item</a></li>
             <li><a th:href="@{/journeys}">Journeys</a></li>
             <li><a th:href="@{/peopleTravelling}">People joining</a></li>
@@ -30,12 +30,17 @@
     </div>
 
     <div>
-        <h3> For your trip:
+        <h3> For your  <span class="cie-green" th:text="${JourneyDetails.numberDays}"></span>-day trip:
             <span class="cie-green" th:text="${JourneyDetails.journeyName}"> </span></h3>
         <h4>With transport type:
             <span class="cie-green" th:text="${JourneyDetails.transport.getName()}"> </span></h4>
+        <h4>With journey type:
+            <span class="cie-green" th:text="${JourneyDetails.journeyType.getName()}"> </span>
+        </h4>
         <h3>You need to pack the following items:</h3>
     </div>
+
+
 
     <div class="row">
         <div class="col-lg-12">
@@ -47,8 +52,10 @@
                     <th>Item Color</th>
                     <th>Category</th>
                     <th>Transport dependency</th>
-
-
+                    <th>Number of pieces</th>
+                    <th>Type of Journey</th>
+                    <th>Weather Conditions</th>
+                    <th>Travel Zone</th>
                 </tr>
                 </thead>
 
@@ -59,9 +66,10 @@
                     <td th:text="${item.itemColor}"></td>
                     <td th:text="${item.category.getName()}"></td>
                     <td th:text="${item.transport.getName()}"></td>
-
-
-
+                    <td th:text="${item.dayDependency}"></td>
+                    <td>type of journey eg: beach = bathing suit</td>
+                    <td>Weather Conditions eg: raining: raincoat</td>
+                    <td>Travel Zone eg: documents: passport</td>
                 </tr>
                 </tbody>
             </table>

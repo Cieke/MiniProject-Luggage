@@ -37,8 +37,9 @@ public class Journey { //implements Serializable
     @Enumerated(EnumType.STRING)
     private Weather weather;
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
     private JourneyType journeyType;
+
     public Long getId() {
         return id;
     }

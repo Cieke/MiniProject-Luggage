@@ -14,7 +14,7 @@
 
         <ul class="nav navbar-nav">
             <li><a th:href="@{/index}">Home</a></li>
-            <li><a th:href="@{/items}">Luggage Items</a></li>
+            <li><a th:href="@{/items}">Database Items</a></li>
             <li><a th:href="@{/addItem}">Add Item</a></li>
             <li><a th:href="@{/journeys}">Journeys</a></li>
             <li><a th:href="@{/peopleTravelling}">People joining</a></li>
@@ -64,6 +64,10 @@
                     </select>
                 </div>
 
+                <div>Is this item travel zone dependend?</div>
+
+               <div> Is this item dependend on weather conditions?</div>
+                <div>Is this item dependend on the type of journey?</div>
                 <!--<div class="form-group" th:class="${#fields.hasErrors('dayDependency')}? 'has-error'">-->
                     <!--<label th:for="${#ids.next('dayDependency')}">dayDependency:</label>-->
                     <!--<input type="text" th:field="*{dayDependency}" class="form-control"/>-->

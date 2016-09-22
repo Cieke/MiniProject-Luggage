@@ -5,7 +5,6 @@ import com.realdolmen.spring.blog.dao.ItemRepository;
 import com.realdolmen.spring.blog.dao.TransportRepository;
 import com.realdolmen.spring.blog.domain.Category;
 import com.realdolmen.spring.blog.domain.Item;
-import com.realdolmen.spring.blog.domain.Journey;
 import com.realdolmen.spring.blog.domain.Transport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -47,6 +46,7 @@ public class AddItemController {
         model.addAttribute("CatList",categoryList); //CatList: key, categoryList= value
         List<Transport> transportList = transportRepository.findAll();
         model.addAttribute("TransList",transportList);
+
     }
 
 
