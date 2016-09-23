@@ -17,8 +17,9 @@
             <li><a th:href="@{/items}">Database Items</a></li>
             <li><a th:href="@{/addItem}">Add Item</a></li>
             <li><a th:href="@{/journeys}">Journeys</a></li>
+            <li><a th:href="@{/addJourney}">Add Journey</a></li>
             <li><a th:href="@{/peopleTravelling}">People joining</a></li>
-            </ul>
+        </ul>
     </div>
 </div>
 <div class="container">
@@ -99,40 +100,21 @@
                         </option>
                     </select>
                 </div>
-                <!--<div class="form-group" th:class="${#fields.hasErrors('journeyType')}? 'has-error'">-->
-                    <!--<label th:for="${#ids.next('travelZone')}">Is this item travel zone dependend?</label>-->
-                    <!--<select id="travelZone" th:field="*{travelZone}" class="form-control">-->
-                        <!--<option th:each="listitem: ${TravelZoneList}"-->
-                                <!--th:value="${listitem.id}"-->
-                                <!--th:text="${listitem.name}">-->
-                        <!--</option>-->
-                    <!--</select>-->
-                <!--</div>-->
 
 
+                <div class="form-group" th:class="${#fields.hasErrors('dayDependency')}? 'has-error'">
+                    <label th:for="${#ids.next('dayDependency')}">Item dependend on number of days?</label>
+                    <select id="dayDependency" th:field="*{dayDependency}" class="form-control">
 
-                <!--<div class="form-group" th:class="${#fields.hasErrors('dayDependency')}? 'has-error'">-->
-                    <!--<label th:for="${#ids.next('dayDependency')}">dayDependency:</label>-->
-                    <!--<input type="text" th:field="*{dayDependency}" class="form-control"/>-->
-                    <!--<span th:if="${#fields.hasErrors('dayDependency')}" class="help-block" th:errors="*{dayDependency}"></span>-->
-                <!--</div>-->
+                    <option type="text" id="dayDependency" th:field="*{dayDependency}"
+                           th:each="listitem: ${dayDependency}"
+                           th:value="${dayDependency.id}"
+                           th:text="${dayDependency.name}">
 
+                    </option>
 
-                <!--<div class="form-group" th:class="${#fields.hasErrors('dayDependency')}? 'has-error'">-->
-                    <!--<label th:for="${#ids.next('dayDependency')}">Item dependend on number of days?</label>-->
-                    <!--&lt;!&ndash;<select id="transport" th:field="*{transport}" class="form-control">&ndash;&gt;-->
-                    <!--<input type="radio" id="dayDependency" th:field="*{dayDependency}"-->
-                           <!--th:each="listitem: ${dayDependency}"-->
-                           <!--th:value="${dayDependency.id}"-->
-                           <!--th:text="${dayDependency.name}">-->
-
-                    <!--</input>-->
-
-                    <!--&lt;!&ndash;</select>&ndash;&gt;-->
-                <!--</div>-->
-
-
-
+                    </select>
+                </div>
 
                 <br/>
                 <button type="submit" class="btn btn-primary">Add Item</button>

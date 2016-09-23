@@ -1,8 +1,5 @@
 --alter table item add foreign key (category_id) references category(id);
 
-
-
-
 insert into Category(id, name) values (1,'clothing');
 insert into Category(id, name) values (2,'shoes');
 insert into Category(id, name) values (3,'make up');
@@ -14,6 +11,7 @@ insert into Category(id, name) values (8, 'medication');
 insert into Category(id, name) values (9, 'accessoiries');
 insert into Category(id, name) values (10, 'documents');
 insert into Category(id, name) values (11, 'equipment');
+insert into Category(id, name) values (12, 'skin care');
 
 insert into JourneyType(id, name) values(1, 'relax');
 insert into JourneyType(id, name) values(2,'sport');
@@ -24,9 +22,9 @@ insert into JourneyType(id, name) values(6,'citytrip');
 insert into JourneyType(id, name) values(7,'spa');
 insert into JourneyType(id, name) values(8,'shoppingtrip');
 insert into JourneyType(id, name) values(9,'festival');
-insert into JourneyType(id, name) values(10,'/');
+insert into JourneyType(id, name) values(10,'N/A');
 
-insert into Transport(id, name) values (1, '/');
+insert into Transport(id, name) values (1, 'N/A');
 insert into Transport(id, name) values (2, 'bicycle');
 insert into Transport(id, name) values (3, 'car');
 insert into Transport(id, name) values (4, 'bus');
@@ -43,10 +41,10 @@ insert INTO Weather(id, name) VALUES (5, 'very cold');
 insert INTO Weather(id, name) VALUES (6, 'warm and rainy');
 insert INTO Weather(id, name) VALUES (7, 'cold and rainy');
 insert INTO Weather(id, name) VALUES (8, 'snow');
-insert INTO Weather(id, name) VALUES (9, '');
+insert INTO Weather(id, name) VALUES (9, 'N/A');
 insert INTO Weather(id, name) VALUES (10, 'unknown');
 
-insert into TravelZone(id, name) values (1, '');
+insert into TravelZone(id, name) values (1, 'N/A');
 insert into TravelZone(id, name) values (2, 'domestic');
 insert into TravelZone(id, name) values (3, 'shengen');
 insert into TravelZone(id, name) values (4, 'non shengen');
@@ -76,6 +74,14 @@ INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDepende
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id, TravelZone_id) VALUES (17, 8,'ear plugs','none', 6, false,10,10,4,1);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id, TravelZone_id) VALUES (18, 1,'bikini','none', 1, false,4,1,2,1);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id, TravelZone_id) VALUES (19, 1,'rain coat','none', 1, false,10,6,5,1);
+INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id, TravelZone_id)
+VALUES (20, 10,'passport','none', 1, false,10,9,5,4);
+INSERT INTO item (id, dayDependency, itemColor, itemName, category_id, journeyType_id, personType_id, transport_id, travelZone_id, weather_id)
+VALUES (21, false,'none','sunscreen',12,4,5,1,1,2);
+INSERT INTO item (id, dayDependency, itemColor, itemName, category_id, journeyType_id, personType_id, transport_id, travelZone_id, weather_id)
+VALUES (22, false,'none','after sun',12,4,5,1,1,2);
+
+
 
 insert into journey (id, journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)
     values (1, 'Beachholliday Mallorca', 10, 6, 3, 1, 4);

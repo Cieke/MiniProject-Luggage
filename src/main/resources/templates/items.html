@@ -11,13 +11,13 @@
 <body>
 <div class="navbar navbar-default">
     <div class="container">
-        <!--<a class="navbar-brand" href="http://www.realdolmen.com"><span class="rd-red">Real</span><span class="rd-blue">Dolmen</span></a>-->
-        <!--<a class="navbar-brand" href="http://education.realdolmen.com">Courses</a>-->
+
         <ul class="nav navbar-nav">
             <li><a th:href="@{/index}">Home</a></li>
             <li><a th:href="@{/items}">Database Items</a></li>
             <li><a th:href="@{/addItem}">Add Item</a></li>
             <li><a th:href="@{/journeys}">Journeys</a></li>
+            <li><a th:href="@{/addJourney}">Add Journey</a></li>
             <li><a th:href="@{/peopleTravelling}">People joining</a></li>
         </ul>
     </div>
@@ -49,17 +49,19 @@
                 </tr>
                 </thead>
                 <tbody th:each="item : ${itemList}">
+
+                <!--<td><a th:text="${journey.journeyName}" th:href="@{/journeyItems(id=${journey.id})}"></a></td>-->
                 <tr>
-                    <td th:text="${item.category.getName()}"></td>
+                    <td><a th:text="${item.category.getName()}" th:href="@{/categoryItems(id=${item.category.id})}"></a></td>
                     <td th:text="${item.itemName}"></td>
                     <td th:text="${item.itemColor}"></td>
 
                     <td th:text="${item.transport.getName()}"></td>
                     <td th:text="${item.journeyType.getName()}"></td>
                     <td th:text="${item.weather.getName()}"></td>
-                    <!--<td th:text="${item.personType.getName()}"></td>-->
-                    <!--<td th:text="${item.TravelZone.getName()}"></td>-->
-                    <!--<td th:text="${item.dayDependency}"></td>-->
+                    <td th:text="${item.personType.getName()}"></td>
+                    <td th:text="${item.TravelZone.getName()}"></td>
+                    <td th:text="${item.dayDependency}"></td>
 
 
                 </tr>
