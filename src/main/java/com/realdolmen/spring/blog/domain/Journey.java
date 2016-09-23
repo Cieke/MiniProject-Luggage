@@ -16,7 +16,7 @@ public class Journey { //implements Serializable
     private Long id;
 
     //@Column
-    @ NotBlank
+    @NotBlank
     private String journeyName;
 
    // @NotBlank

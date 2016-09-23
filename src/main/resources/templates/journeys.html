@@ -37,12 +37,12 @@
                 <thead>
                 <tr>
                     <th>Journey Name</th>
-                    <th>Number of Days</th>
+                    <th>Nr of Days</th>
                     <th>Travel Zone</th>
                     <th>Transport</th>
 
-                    <th>Type of Journey</th>
-                    <th>Weather conditions</th>
+                    <th>JourneyType</th>
+                    <th>Weather</th>
                 </tr>
                 </thead>
                 <tbody th:each="journey : ${journeyList}">
@@ -54,7 +54,7 @@
                     <td th:text="${journey.transport.getName()}"></td>
 
                     <td th:text="${journey.journeyType.getName()}"></td>
-                    <!--<td th:text="${journey.weather.getName()}"></td>-->
+                    <td th:text="${journey.weather.getName()}"></td>
                 </tr>
                 </tbody>
             </table>
