@@ -31,8 +31,6 @@
         <p class="lead">I am going away and I need to pack </p>
 
         <h3> For what type of journey do you want to pack? </h3>
-
-
     </div>
 
 
@@ -47,15 +45,15 @@
             <input type="text" th:field="*{numberDays}" class="form-control"/>
             <span th:if="${#fields.hasErrors('numberDays')}" class="help-block" th:errors="*{numberDays}"></span>
         </div>
-        <div class="form-group" th:class="${#fields.hasErrors('travelZone')}? 'has-error'">
-            <label th:for="${#ids.next('travelZone')}">Where are you travelling to?</label>
-            <select id="travelZone" th:field="*{travelZone}" class="form-control">
-                <option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.TravelZone).values()}"
-                        th:value="${listitem}"
-                        th:text="${listitem}">
-                </option>
-            </select>
-        </div>
+        <!--<div class="form-group" th:class="${#fields.hasErrors('travelZone')}? 'has-error'">-->
+            <!--<label th:for="${#ids.next('travelZone')}">Where are you travelling to?</label>-->
+            <!--<select id="travelZone" th:field="*{travelZone}" class="form-control">-->
+                <!--<option th:each="listitem: ${TravelZoneList).values()}"-->
+                        <!--th:value="${listitem}"-->
+                        <!--th:text="${listitem}">-->
+                <!--</option>-->
+            <!--</select>-->
+        <!--</div>-->
         <div class="form-group" th:class="${#fields.hasErrors('transport')}? 'has-error'">
             <label th:for="${#ids.next('transport')}">Which type of transportation will you be using?</label>
             <select id="transport" th:field="*{transport}" class="form-control">
@@ -75,45 +73,26 @@
                    </select>
         </div>
 
-
-
-        <!--<div class="form-group" th:class="${#fields.hasErrors('transport')}? 'has-error'">-->
-            <!--<label th:for="${#ids.next('transport')}">Welke transportmiddelen zal u gebruiken?</label>-->
-            <!--&lt;!&ndash;<select id="transport" th:field="*{transport}" class="form-control">&ndash;&gt;-->
-                <!--<input type="checkbox" id="transport" th:field="*{transport}"-->
-                       <!--th:each="listitem: ${T(com.realdolmen.spring.blog.domain.Transport).values()}"-->
-                        <!--th:value="${listitem}"-->
-                        <!--th:text="${listitem}">-->
-
-                <!--</input>-->
-
-            <!--&lt;!&ndash;</select>&ndash;&gt;-->
-        <!--</div>-->
-
-
-
-
-
-            <!--<div class="form-group" th:class="${#fields.hasErrors('transport')}? 'has-error'">-->
-            <!--<label th:for="${#ids.next('transport')}">Welke transportmiddelen zal u gebruiken?</label>-->
-            <!--<input type="checkbox" id="transport" th:field="*{transport}" class="form-control">-->
-                <!--<option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.Transport).values()}"-->
-                        <!--th:value="${listitem}"-->
-                        <!--th:text="${listitem}">-->
-                <!--</option>-->
-            <!--</input>-->
-        <!--</div>-->
-
-
-        <div class="form-group" th:class="${#fields.hasErrors('weather')}? 'has-error'">
-            <label th:for="${#ids.next('weather')}">What will be the weather conditions?</label>
-            <select id="weather" th:field="*{weather}" class="form-control">
-                <option th:each="listitem: ${T(com.realdolmen.spring.blog.domain.Weather).values()}"
-                        th:value="${listitem}"
-                        th:text="${listitem}">
+        <div class="form-group" th:class="${#fields.hasErrors('travelZone')}? 'has-error'">
+            <label th:for="${#ids.next('travelZone')}">Is this item travelzone related?</label>
+            <select id="travelZone" th:field="*{travelZone}" class="form-control">
+                <option th:each="listitem: ${TravelZoneList}"
+                        th:value="${listitem.id}"
+                        th:text="${listitem.name}">
                 </option>
             </select>
         </div>
+
+
+        <!--<div class="form-group" th:class="${#fields.hasErrors('weather')}? 'has-error'">-->
+            <!--<label th:for="${#ids.next('weather')}">What will be the weather conditions?</label>-->
+            <!--<select id="weather" th:field="*{weather}" class="form-control">-->
+                <!--<option th:each="listitem: ${WeatherList)}"-->
+                        <!--th:value="${listitem.id}"-->
+                        <!--th:text="${listitem.name}">-->
+                <!--</option>-->
+            <!--</select>-->
+        <!--</div>-->
 
 
 

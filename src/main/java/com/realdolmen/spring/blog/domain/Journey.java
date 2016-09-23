@@ -10,12 +10,10 @@ import javax.persistence.*;
 @Entity
 public class Journey { //implements Serializable
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
 
     //@Column
     @ NotBlank
@@ -24,15 +22,11 @@ public class Journey { //implements Serializable
    // @NotBlank
     private Integer numberDays;
 
-    //where are you going?
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
     private TravelZone travelZone;
 
     @ManyToOne
     private Transport transport;
-//    @Enumerated(EnumType.STRING)
-//    @ElementCollection
-//    private List<Transport> transport = new ArrayList<>();
 
     @ManyToOne
     private Weather weather;
@@ -71,11 +65,6 @@ public class Journey { //implements Serializable
     public void setTravelZone(TravelZone travelZone) {
         this.travelZone = travelZone;
     }
-//
-//    public List<Transport> getTransport() {
-//        return transport;
-//    }
-
 
     public Transport getTransport() {
         return transport;
@@ -111,7 +100,6 @@ public class Journey { //implements Serializable
                 ", transport='" + transport + '\'' +
                 ", weather='" + weather + '\'' +
                 ", journeyType='" + journeyType + '\'' +
-
                 '}';
     }
 }

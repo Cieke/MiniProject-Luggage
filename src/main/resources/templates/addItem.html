@@ -81,6 +81,24 @@
                         </option>
                     </select>
                 </div>
+                <div class="form-group" th:class="${#fields.hasErrors('personType')}? 'has-error'">
+                    <label th:for="${#ids.next('personType')}">Is this item gender or age related?</label>
+                    <select id="personType" th:field="*{personType}" class="form-control">
+                        <option th:each="listitem: ${PersonTypeList}"
+                                th:value="${listitem.id}"
+                                th:text="${listitem.name}">
+                        </option>
+                    </select>
+                </div>
+                <div class="form-group" th:class="${#fields.hasErrors('travelZone')}? 'has-error'">
+                    <label th:for="${#ids.next('travelZone')}">Is this item travelzone related?</label>
+                    <select id="travelZone" th:field="*{travelZone}" class="form-control">
+                        <option th:each="listitem: ${TravelZoneList}"
+                                th:value="${listitem.id}"
+                                th:text="${listitem.name}">
+                        </option>
+                    </select>
+                </div>
                 <!--<div class="form-group" th:class="${#fields.hasErrors('journeyType')}? 'has-error'">-->
                     <!--<label th:for="${#ids.next('travelZone')}">Is this item travel zone dependend?</label>-->
                     <!--<select id="travelZone" th:field="*{travelZone}" class="form-control">-->

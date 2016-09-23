@@ -35,24 +35,30 @@
             <table class="table table-striped table-hover">
                 <thead>
                 <tr>
-                    <th>Item Name</th>
-                    <th>Item Color</th>
                     <th>Category</th>
-                    <th>Transport dependency</th>
-                    <th>Journey Type dependency</th>
-                    <th>Weather related</th>
-                    <!--<th>Dag afhankelijk</th>-->
+                    <th>Item</th>
+                    <th>Color</th>
+
+                    <th>Transport</th>
+                    <th>JourneyType</th>
+                    <th>Weather</th>
+                    <th>PersonType</th>
+                    <th>TravelZone</th>
+                    <th>DayDependend</th>
 
                 </tr>
                 </thead>
                 <tbody th:each="item : ${itemList}">
                 <tr>
+                    <td th:text="${item.category.getName()}"></td>
                     <td th:text="${item.itemName}"></td>
                     <td th:text="${item.itemColor}"></td>
-                    <td th:text="${item.category.getName()}"></td>
+
                     <td th:text="${item.transport.getName()}"></td>
                     <td th:text="${item.journeyType.getName()}"></td>
                     <td th:text="${item.weather.getName()}"></td>
+                    <!--<td th:text="${item.personType.getName()}"></td>-->
+                    <!--<td th:text="${item.TravelZone.getName()}"></td>-->
                     <!--<td th:text="${item.dayDependency}"></td>-->
 
 

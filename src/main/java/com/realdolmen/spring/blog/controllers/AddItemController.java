@@ -36,10 +36,15 @@ public class AddItemController {
     @Autowired
     WeatherRepository weatherRepository;
 
+    @Autowired
+    PersonTypeRepository personTypeRepository;
+
+    @Autowired
+    TravelZoneRepository travelZoneRepository;
+
     @RequestMapping(method = RequestMethod.GET)
     public Item register(Model model){
         prepareDropDows(model);
-
         return new Item();
     }
 
@@ -52,7 +57,10 @@ public class AddItemController {
         model.addAttribute("JourneyTypeList",journeyTypeList);
         List<Weather> weatherList = weatherRepository.findAll();
         model.addAttribute("WeatherList", weatherList);
-
+        List<PersonType> personTypeList = personTypeRepository.findAll();
+        model.addAttribute("PersonTypeList", personTypeList);
+        List<TravelZone> travelZoneList = travelZoneRepository.findAll();
+        model.addAttribute("TravelZoneList", travelZoneList);
     }
 
 

@@ -30,20 +30,22 @@
     </div>
 
     <div>
-        <h3> For your  <span class="cie-green" th:text="${JourneyDetails.numberDays}"></span>-day trip:
-            <span class="cie-green" th:text="${JourneyDetails.journeyName}"> </span></h3>
-        <h4>With transport type:
-            <span class="cie-green" th:text="${JourneyDetails.transport.getName()}"> </span></h4>
-        <h4>With journey type:
+        <h3> For your
+            <span class="cie-green" th:text="${JourneyDetails.numberDays}"></span>-day
             <span class="cie-green" th:text="${JourneyDetails.journeyType.getName()}"> </span>
+                 trip:
+            <span class="cie-green" th:text="${JourneyDetails.journeyName}"> </span></h3>
+        <h4>    Which is a
+                <span class="cie-green" th:text="${JourneyDetails.travelZone.getName()}"> </span>
+                destination, for which you will be travelling by
+            <span class="cie-green" th:text="${JourneyDetails.transport.getName()}"> </span>.</h4>
+
+
+        <h4>And which has the following weather conditions:
+            <span class="cie-green" th:text="${JourneyDetails.weather.getName()}">. </span>
         </h4>
-        <h4>With
-            <span class="cie-green" th:text="${JourneyDetails.weather.getName()}"> </span> weather
-        </h4>
-        <h4>Travelling to :
-            <span class="cie-green" > zone </span> zone
-        </h4>
-        <h3>You need to pack the following items:</h3>
+
+        <h3>You will need to pack the following items:</h3>
     </div>
 
     <!--SELECT * FROM luggage.item where transport_id=7 or transport_id=1 and journeyType_id=10 or journeyType_id=3;-->

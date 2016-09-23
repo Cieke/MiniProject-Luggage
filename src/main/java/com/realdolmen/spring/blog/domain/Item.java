@@ -33,6 +33,10 @@ public class Item {
     private Transport transport;
     @ManyToOne
     private Weather weather;
+    @ManyToOne
+    private TravelZone travelZone;
+    @ManyToOne
+    private PersonType personType;
 
     public Long getId() {
         return id;
@@ -99,6 +103,23 @@ public class Item {
         this.weather = weather;
     }
 
+    public TravelZone getTravelZone() {
+        return travelZone;
+    }
+
+    public void setTravelZone(TravelZone travelZone) {
+        this.travelZone = travelZone;
+    }
+
+
+    public PersonType getPersonType() {
+        return personType;
+    }
+
+    public void setPersonType(PersonType personType) {
+        this.personType = personType;
+    }
+
     @Override
     public String toString(){
         return "Item{" +
@@ -110,6 +131,8 @@ public class Item {
                 ", transport'" + transport + '\''+
                 ", journeyType='" + journeyType + '\'' +
                 ", weather='" + weather + '\'' +
+                ", travelZone='" + travelZone + '\'' +
+                ", personType='" + personType + '\'' +
                 '}';
     }
 }

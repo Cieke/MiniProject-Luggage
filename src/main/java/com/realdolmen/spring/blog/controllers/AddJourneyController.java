@@ -1,13 +1,7 @@
 package com.realdolmen.spring.blog.controllers;
 
-import com.realdolmen.spring.blog.dao.JourneyRepository;
-import com.realdolmen.spring.blog.dao.JourneyTypeRepository;
-import com.realdolmen.spring.blog.dao.TransportRepository;
-import com.realdolmen.spring.blog.dao.WeatherRepository;
-import com.realdolmen.spring.blog.domain.Journey;
-import com.realdolmen.spring.blog.domain.JourneyType;
-import com.realdolmen.spring.blog.domain.Transport;
-import com.realdolmen.spring.blog.domain.Weather;
+import com.realdolmen.spring.blog.dao.*;
+import com.realdolmen.spring.blog.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,14 +23,17 @@ public class AddJourneyController {
 
     @Autowired
     JourneyRepository journeyRepository;
-
     @Autowired
     TransportRepository transportRepository;
     @Autowired
     JourneyTypeRepository journeyTypeRepository;
-
     @Autowired
     WeatherRepository weatherRepository;
+    @Autowired
+    TravelZoneRepository travelZoneRepository;
+
+    @Autowired
+    PersonTypeRepository personTypeRepository;
 
     @RequestMapping(method = RequestMethod.GET)
     public Journey whatever(Model model){
@@ -52,7 +49,11 @@ public class AddJourneyController {
         List<JourneyType> journeyTypeList = journeyTypeRepository.findAll();
         model.addAttribute("JourneyTypeList",journeyTypeList);
         List<Weather> weatherList = weatherRepository.findAll();
-        model.addAttribute("weatherList", weatherList);
+        model.addAttribute("WeatherList", weatherList);
+        List<TravelZone> travelZoneList = travelZoneRepository.findAll();
+        model.addAttribute("TravelZoneList",travelZoneList);
+        List<PersonType> personTypeList = personTypeRepository.findAll();
+        model.addAttribute("PersonTypeList", personTypeList);
     }
 
 
