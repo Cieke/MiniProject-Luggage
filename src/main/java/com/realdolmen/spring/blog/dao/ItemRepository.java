@@ -11,9 +11,10 @@ import java.util.List;
  */
 public interface ItemRepository extends JpaRepository<Item, Long> {
 
-    @Query("SELECT i FROM Item i where (i.transport.id = ?1 or i.transport.id = 1) and (i.journeyType.id = ?1 or i.journeyType.id = 10)")
+    @Query("SELECT i FROM Item i where (i.transport.id = ?1 or i.transport.id = 1) ")
     List<Item> findByTransport_id(Long id);
+
 
 }
 
-//SELECT * FROM luggage.item where transport_id=7 or transport_id=1 and journeyType_id=10 or journeyType_id=?1;
+//SELECT * FROM luggage.item where transport_id=7 or transport_id=1 and journeyType_id=10 or journeyType_id=?1;and (i.journeyType.id = ?1 or i.journeyType.id = 10)
