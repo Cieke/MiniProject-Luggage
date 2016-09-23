@@ -38,10 +38,10 @@
             <span class="cie-green" th:text="${JourneyDetails.journeyType.getName()}"> </span>
         </h4>
         <h4>With
-            <span class="cie-green" th:text="${JourneyDetails.journeyType.getName()}"> </span> weather
+            <span class="cie-green" th:text="${JourneyDetails.weather.getName()}"> </span> weather
         </h4>
         <h4>Travelling to :
-            <span class="cie-green" th:text="${JourneyDetails.journeyType.getName()}"> </span> zone
+            <span class="cie-green" > zone </span> zone
         </h4>
         <h3>You need to pack the following items:</h3>
     </div>
@@ -74,8 +74,8 @@
                     <td th:text="${item.transport.getName()}"></td>
                     <td th:text="${item.dayDependency}"></td>
                     <td th:text="${item.journeyType.getName()}"></td>
-                    <td>Weather Conditions eg: raining: raincoat</td>
-                    <td>Travel Zone eg: documents: passport</td>
+                    <td th:text="${item.weather.getName()}"></td>
+                    <td>eg: shengen</td>
                 </tr>
                 </tbody>
             </table>

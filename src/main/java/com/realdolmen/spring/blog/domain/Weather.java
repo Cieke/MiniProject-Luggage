@@ -1,19 +1,33 @@
 package com.realdolmen.spring.blog.domain;
 
+import org.hibernate.validator.constraints.NotBlank;
+
+import javax.persistence.*;
+
 /**
  * Created by tywinlannister on 20/09/16.
  */
-public enum Weather {
-    very_warm,
-    warm,
-    normal,
-    cold,
-    very_cold,
-    warm_rainy,
-    cold_rainy,
-    warm_snow,
-    cold_snow,
-    unknown;
+@Entity
+public class Weather {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
+    @NotBlank
+    private String name;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
 
 
 }

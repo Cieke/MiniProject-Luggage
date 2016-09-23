@@ -34,7 +34,7 @@ public class Journey { //implements Serializable
 //    @ElementCollection
 //    private List<Transport> transport = new ArrayList<>();
 
-    @Enumerated(EnumType.STRING)
+    @ManyToOne
     private Weather weather;
 
     @ManyToOne
@@ -111,6 +111,7 @@ public class Journey { //implements Serializable
                 ", transport='" + transport + '\'' +
                 ", weather='" + weather + '\'' +
                 ", journeyType='" + journeyType + '\'' +
+
                 '}';
     }
 }

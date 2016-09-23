@@ -3,9 +3,11 @@ package com.realdolmen.spring.blog.controllers;
 import com.realdolmen.spring.blog.dao.JourneyRepository;
 import com.realdolmen.spring.blog.dao.JourneyTypeRepository;
 import com.realdolmen.spring.blog.dao.TransportRepository;
+import com.realdolmen.spring.blog.dao.WeatherRepository;
 import com.realdolmen.spring.blog.domain.Journey;
 import com.realdolmen.spring.blog.domain.JourneyType;
 import com.realdolmen.spring.blog.domain.Transport;
+import com.realdolmen.spring.blog.domain.Weather;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -33,6 +35,9 @@ public class AddJourneyController {
     @Autowired
     JourneyTypeRepository journeyTypeRepository;
 
+    @Autowired
+    WeatherRepository weatherRepository;
+
     @RequestMapping(method = RequestMethod.GET)
     public Journey whatever(Model model){
         generateDropDown(model);
@@ -46,6 +51,8 @@ public class AddJourneyController {
         model.addAttribute("TransList",transportList);
         List<JourneyType> journeyTypeList = journeyTypeRepository.findAll();
         model.addAttribute("JourneyTypeList",journeyTypeList);
+        List<Weather> weatherList = weatherRepository.findAll();
+        model.addAttribute("weatherList", weatherList);
     }
 
 

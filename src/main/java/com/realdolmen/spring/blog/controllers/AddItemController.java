@@ -1,13 +1,7 @@
 package com.realdolmen.spring.blog.controllers;
 
-import com.realdolmen.spring.blog.dao.CategoryRepository;
-import com.realdolmen.spring.blog.dao.ItemRepository;
-import com.realdolmen.spring.blog.dao.JourneyTypeRepository;
-import com.realdolmen.spring.blog.dao.TransportRepository;
-import com.realdolmen.spring.blog.domain.Category;
-import com.realdolmen.spring.blog.domain.Item;
-import com.realdolmen.spring.blog.domain.JourneyType;
-import com.realdolmen.spring.blog.domain.Transport;
+import com.realdolmen.spring.blog.dao.*;
+import com.realdolmen.spring.blog.domain.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,6 +33,9 @@ public class AddItemController {
     @Autowired
     JourneyTypeRepository journeyTypeRepository;
 
+    @Autowired
+    WeatherRepository weatherRepository;
+
     @RequestMapping(method = RequestMethod.GET)
     public Item register(Model model){
         prepareDropDows(model);
@@ -53,6 +50,8 @@ public class AddItemController {
         model.addAttribute("TransList",transportList);
         List<JourneyType> journeyTypeList = journeyTypeRepository.findAll();
         model.addAttribute("JourneyTypeList",journeyTypeList);
+        List<Weather> weatherList = weatherRepository.findAll();
+        model.addAttribute("WeatherList", weatherList);
 
     }
 

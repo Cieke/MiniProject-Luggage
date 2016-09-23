@@ -31,6 +31,8 @@ public class Item {
 
     @ManyToOne
     private Transport transport;
+    @ManyToOne
+    private Weather weather;
 
     public Long getId() {
         return id;
@@ -89,6 +91,14 @@ public class Item {
         this.journeyType = journeyType;
     }
 
+    public Weather getWeather() {
+        return weather;
+    }
+
+    public void setWeather(Weather weather) {
+        this.weather = weather;
+    }
+
     @Override
     public String toString(){
         return "Item{" +
@@ -99,8 +109,7 @@ public class Item {
                 ", dayDependency'" + dayDependency + '\''+
                 ", transport'" + transport + '\''+
                 ", journeyType='" + journeyType + '\'' +
+                ", weather='" + weather + '\'' +
                 '}';
-
-
     }
 }
