@@ -27,17 +27,15 @@ public class JourneyItemsController {
     @Autowired
     ItemRepository itemRepository;
 
-
     @RequestMapping(method = RequestMethod.GET)
     public String journeyItems(Model model, @RequestParam(value = "id") Long id) {
         Journey j = journeyRepository.findOne(id);
 
-        System.out.println(j.getTransport().getName());
+//        System.out.println(j.getTransport().getName());
 
         List<Item> items = itemRepository.findByTransport_id(j.getTransport().getId());
 
         model.addAttribute("JourneyDetails",j);
-
         model.addAttribute("itemList",items);
         return "journeyItems";
         }
