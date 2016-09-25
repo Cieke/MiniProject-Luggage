@@ -75,7 +75,7 @@ INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDepende
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id, TravelZone_id) VALUES (18, 1,'bikini','none', 1, false,4,1,2,1);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id, TravelZone_id) VALUES (19, 1,'rain coat','none', 1, false,10,6,5,1);
 INSERT INTO item (id, category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id, TravelZone_id)
-VALUES (20, 10,'passport','none', 1, false,10,9,5,4);
+VALUES (20, 10,'passport','none', 1, false,10,10,5,4);
 INSERT INTO item (id, dayDependency, itemColor, itemName, category_id, journeyType_id, personType_id, transport_id, travelZone_id, weather_id)
 VALUES (21, false,'none','sunscreen',12,4,5,1,1,2);
 INSERT INTO item (id, dayDependency, itemColor, itemName, category_id, journeyType_id, personType_id, transport_id, travelZone_id, weather_id)
@@ -92,7 +92,7 @@ insert into journey (id, journeyName, numberDays, transport_id, travelZone_id, w
 insert into journey (id, journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)
     values (4, 'Graspop Metal Meeting', 3, 3, 2, 10, 9);
 insert into journey (id, journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)
-    values (5, 'Cruise in the Carribean', 10, 7, 4, 1, 4);
+    values (5, 'Cruise in the Carribean', 10, 7, 4, 2, 4);
 insert into journey (id, journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)
     values (6, 'Mont Ventoux cycling', 10, 2, 4, 1, 2);
 insert into journey (id, journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)

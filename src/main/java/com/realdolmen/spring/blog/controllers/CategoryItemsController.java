@@ -30,13 +30,24 @@ public class CategoryItemsController {
     public String categoryItems(Model model, @RequestParam(value = "id") Long id){
         Category cat = categoryRepository.findOne(id);
 
-      //  System.out.println(catId.getCategory().getName());
-       List<Item> items = itemRepository.findByCategory_id(cat.getId());
-//catId.getCategory().getId()
+        List<Item> items = itemRepository.findByCategory_id(cat.getId());
+
+//        List<Category> categoryList = categoryRepository.findAll();
+//        model.addAttribute("CatList", categoryList);
+
+
         model.addAttribute("CatItems", cat);
         model.addAttribute("itemList", items);
         return  "categoryItems";
     }
+
+    private void prepareDropDowns(Model model) {
+        List<Category> categoryList = categoryRepository.findAll();
+        model.addAttribute("CatList", categoryList); //CatList: key, categoryList= value
+    }
+
+
+
 
 }
 
