@@ -3,7 +3,7 @@ package com.realdolmen.spring.blog.domain;
 /**
  * Created by tywinlannister on 26/09/16.
  */
-public class ZoneList {
+public class ZoneItemList {
 
     private Long item_id;
     private Long zone_id;

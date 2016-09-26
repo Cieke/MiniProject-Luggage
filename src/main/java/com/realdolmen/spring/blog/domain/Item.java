@@ -37,16 +37,9 @@ public class Item {
 
 
     @ManyToMany
-    @JoinTable(name="ZoneLList", inverseJoinColumns =  @JoinColumn(name= "zone_id", referencedColumnName = "id"),
+    @JoinTable(name="ZoneItemList", inverseJoinColumns =  @JoinColumn(name= "zone_id", referencedColumnName = "id"),
             joinColumns = @JoinColumn(name = "item_id ", referencedColumnName = "id"))
     private List<TravelZone> travelZone;
-
-
-
-
-
-
-
 
     @ManyToOne
     private PersonType personType;
@@ -143,7 +136,6 @@ public class Item {
                 ", transport'" + transport + '\''+
                 ", journeyType='" + journeyType + '\'' +
                 ", weather='" + weather + '\'' +
-
                 ", personType='" + personType + '\'' +
                 '}';
     }

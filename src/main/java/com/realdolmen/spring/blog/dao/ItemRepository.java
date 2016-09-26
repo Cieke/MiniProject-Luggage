@@ -27,3 +27,11 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
 // and (i.journeyType.id = ?1 or i.journeyType.id = 10)
 
 //and journeyType_id=10 or journeyType_id= 4 and travelZone_id=1 or travelZone_id=3 and weather_id=10 or travelZone_id=1
+
+//
+//SELECT *
+//        FROM luggage.item inner join luggage.zoneitemlist
+//        on item.id = zoneitemlist.item_id
+//        where zone_id = 1 or zone_id = 2
+//        and transport_id = 1 or transport_id = 7
+//        ;
