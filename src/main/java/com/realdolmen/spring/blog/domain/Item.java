@@ -3,6 +3,7 @@ package com.realdolmen.spring.blog.domain;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by tywinlannister on 16/09/16.
@@ -33,8 +34,20 @@ public class Item {
     private Transport transport;
     @ManyToOne
     private Weather weather;
-    @ManyToOne
-    private TravelZone travelZone;
+
+
+    @ManyToMany
+    @JoinTable(name="ZoneLList", inverseJoinColumns =  @JoinColumn(name= "zone_id", referencedColumnName = "id"),
+            joinColumns = @JoinColumn(name = "item_id ", referencedColumnName = "id"))
+    private List<TravelZone> travelZone;
+
+
+
+
+
+
+
+
     @ManyToOne
     private PersonType personType;
 
@@ -103,14 +116,13 @@ public class Item {
         this.weather = weather;
     }
 
-    public TravelZone getTravelZone() {
+    public List<TravelZone> getTravelZone() {
         return travelZone;
     }
 
-    public void setTravelZone(TravelZone travelZone) {
+    public void setTravelZone(List<TravelZone> travelZone) {
         this.travelZone = travelZone;
     }
-
 
     public PersonType getPersonType() {
         return personType;
@@ -131,7 +143,7 @@ public class Item {
                 ", transport'" + transport + '\''+
                 ", journeyType='" + journeyType + '\'' +
                 ", weather='" + weather + '\'' +
-                ", travelZone='" + travelZone + '\'' +
+
                 ", personType='" + personType + '\'' +
                 '}';
     }

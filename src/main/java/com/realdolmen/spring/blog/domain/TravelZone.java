@@ -7,8 +7,12 @@ import javax.persistence.*;
 /**
  * Created by tywinlannister on 20/09/16.
  */
+
+
 @Entity
 public class TravelZone {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
