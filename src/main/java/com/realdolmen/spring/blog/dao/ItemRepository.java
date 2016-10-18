@@ -1,6 +1,7 @@
 package com.realdolmen.spring.blog.dao;
 
 import com.realdolmen.spring.blog.domain.Item;
+import com.realdolmen.spring.blog.domain.JourneyType;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
@@ -12,12 +13,12 @@ import java.util.List;
 public interface ItemRepository extends JpaRepository<Item, Long> {
 
     @Query("SELECT i FROM Item i where (i.transport.id = ?1 or i.transport.id = 1) "
-//            +"or (i.journeyType.id = 10 or i.journeyType.id=4) "
+            +"or (i.journeyType.id = ?2 or i.journeyType.id=10) "
 //            +"or (i.travelZone.id=1 or i.travelZone.id=4) "
-//           + "or (i.weather.id=10 or i.weather.id=2) "
+          + "and (i.weather.id=10 or i.weather.id=9 or i.weather.id=?3) "
           +  "order by i.category.id"
             )
-    List<Item> findByTransport_id(Long id);
+    List<Item> retrieveJourneyItems(Long transportId, Long typeId, Long weatherId);
 
     @Query("SELECT i FROM Item i where (i.category.id = ?1 ) ")
     List<Item> findByCategory_id(Long id);
