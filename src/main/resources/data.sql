@@ -1,4 +1,5 @@
 
+
 insert into Category(name) values ('clothing');
 insert into Category(name) values ('shoes');
 insert into Category(name) values ('make up');
@@ -46,8 +47,6 @@ insert into TravelZone( name) values ( 'domestic');
 insert into TravelZone( name) values ( 'shengen');
 insert into TravelZone( name) values ( 'non shengen');
 
-
-
 insert into PersonType(name) values ('child');
 insert into PersonType(name) values ('woman');
 insert into PersonType(name) values ('man');
@@ -74,66 +73,73 @@ INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency,
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 1,'bikini','none', 1, false,4,1,2);
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 1,'rain coat','none', 1, false,10,4,5);
 
-INSERT INTO item (dayDependency, itemColor, itemName, category_id, journeyType_id, personType_id, transport_id, weather_id)VALUES ( false,'none','sunscreen',12,4,5,1,2);
-INSERT INTO item (dayDependency, itemColor, itemName, category_id, journeyType_id, personType_id, transport_id, weather_id)VALUES ( false,'none','after sun',12,4,5,1,2);
-INSERT INTO item (dayDependency, itemColor, itemName, category_id, journeyType_id, personType_id, transport_id, weather_id)VALUES ( false,'none','transport tickets',10,4,5,1,2);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 10,'credit card','none', 1, false,6,2,4);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'25','none', 2, false,2,3,4);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'26','none', 3, false,3,4,3);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'27','none', 4, false,4,5,2);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'28','none', 5, false,5,6,1);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'29','none', 6, false,6,7,4);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'30','none', 7, false,7,8,4);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'31','none', 8, false,8,9,3);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'32','none', 1, false,9,10,2);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'33','none', 2, false,10,1,1);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'34','none', 3, false,10,2,2);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'35','none', 4, false,10,3,4);
+INSERT INTO item (dayDependency, itemColor, itemName, category_id, journeyType_id, personType_id, transport_id, weather_id)VALUES ( false,'none','sunscreen',12,10,5,1,1);
+INSERT INTO item (dayDependency, itemColor, itemName, category_id, journeyType_id, personType_id, transport_id, weather_id)VALUES ( false,'none','after sun',12,10,5,1,1);
+INSERT INTO item (dayDependency, itemColor, itemName, category_id, journeyType_id, personType_id, transport_id, weather_id)VALUES ( false,'none','transport tickets',10,10,2,1,6);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 10,'credit card','none', 1, false,6,6,4);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'dressy trousers','black', 1, false,10,2,4);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'jeans','bleu', 1, false,10,2,3);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'sundress','white', 1, false,10,1,2);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'dress','black', 1, false,10,2,2);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'skirt','red', 1, false,10,1,2);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'socks','none', 1, true,10,3,4);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 9,'shopping bag','none', 1, false,10,6,2);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 3,'lipstick','red', 1, false,10,6,2);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 10,'identity papers','', 1, false,10,6,4);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 10,'international passport','', 1, false,10,6,4);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'34','none', 1, false,10,3,4);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 5,'shampoo','',1, false,10,6,5);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 5,'toothpaste','', 1, false,10,6,5);
 
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (21, 1);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (22, 2);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (23, 3);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (1, 3);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (1,	4);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (2,	1);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (3,	2);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (4,	3);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (5,	4);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (6,	1);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (7,	2);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (8,	3);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (9,	4);
+INSERT INTO item (category_id, transport_id, journeyType_id, weather_id, personType_id, itemName, itemColor, dayDependency) VALUES (7, 1, 10, 6, 4, 'phone charger', '', false);
+INSERT INTO item (category_id, transport_id, journeyType_id, weather_id, personType_id, itemName, itemColor, dayDependency) VALUES (4, 1, 10, 6, 4, 'hairspray', '', false);
+
+
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 1, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 2, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 3, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 4, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 5, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 6, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 7, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 8, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 9, 1);
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES (10, 1);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (11, 2);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (12, 3);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (13, 4);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (11, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (12, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (13, 1);
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES (14, 1);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (15, 2);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (16, 3);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (17, 4);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (15, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (16, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (17, 1);
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES (18, 1);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (19, 2);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (20, 3);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (21, 4);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (19, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (20, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (21, 1);
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES (22, 1);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (23, 2);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (24, 3);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (25, 4);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (23, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (24, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (25, 1);
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES (26, 1);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (27, 2);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (28, 3);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (29, 4);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (27, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (28, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (29, 1);
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES (30, 1);
-INSERT INTO ZoneItemList(item_id, zone_id) VALUES (31, 2);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (31, 1);
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES (32, 3);
-
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (33, 4);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (34, 4);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 9, 1);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (32, 2);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (35, 4);
+INSERT INTO ZoneItemList(item_id, zone_id) VALUES (36, 4);
 
 
 
 insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Beachholliday Mallorca', 10, 6, 3, 1, 4);
-insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Ski in Sölden', 7, 3, 3, 8, 3);
-insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Citytrip New York', 5, 2, 4, 10, 6);
+insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Ski in Sölden', 7, 3, 3, 5, 3);
+insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Citytrip New York', 5, 2, 4, 2, 6);
 insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Graspop Metal Meeting', 3, 3, 2, 6, 9);
-insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Cruise in the Carribean', 10, 7, 4, 2, 4);
-insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Mont Ventoux cycling', 10, 2, 4, 1, 2);
+insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Cruise in the Carribean', 10, 7, 4, 1, 4);
+insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Mont Ventoux cycling', 10, 2, 4, 2, 2);
 insert into journey (journeyName, numberDays, transport_id, travelZone_id, weather_id, journeyType_id)    values ( 'Santiago de Compostella', 20, 8, 4, 1, 2);

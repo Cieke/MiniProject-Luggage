@@ -33,7 +33,7 @@ public class JourneyItemsController {
 
 //        System.out.println(j.getTransport().getName());
 
-        List<Item> items = itemRepository.retrieveJourneyItems(j.getTransport().getId(), j.getJourneyType().getId(), j.getWeather().getId());
+        List<Item> items = itemRepository.retrieveJourneyItems(j.getTransport().getId(), j.getJourneyType().getId(), j.getWeather().getId()); //, j.getTravelZone().getId());
 
         model.addAttribute("JourneyDetails",j);
         model.addAttribute("itemList",items);
