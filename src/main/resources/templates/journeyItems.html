@@ -58,13 +58,15 @@
                 <thead>
                 <tr>
                     <th>Category</th>
+                    <th>Pieces</th>
+
                     <th>Item </th>
                     <th>Color</th>
-                    <!--<th>Pieces</th>-->
-                    <th>Transport dependency</th>
 
                     <th>Type of Journey</th>
-                    <th>Weather Conditions</th>
+                    <th>Weather</th>
+                    <th>Transportation</th>
+
                     <!--<th>Travel Zone</th>-->
                 </tr>
                 </thead>
@@ -73,14 +75,19 @@
                 <tbody th:each="item : ${itemList}">
                 <tr>
                     <td th:text="${item.category.getName()}"></td>
+                    <td th:if="${item.dayDependency} == true" th:text="${JourneyDetails.numberDays}"></td>
+                    <td th:if="${item.dayDependency} == false" th:text="1"></td>
+
                     <td th:text="${item.itemName}"></td>
                     <td th:text="${item.itemColor}"></td>
-                    <!--<td th:text="${item.dayDependency}"></td>-->
+
                     <!--day dependency: boolean times days-->
-                    <td th:text="${item.transport.getName()}"></td>
+
 
                     <td th:text="${item.journeyType.getName()}"></td>
                     <td th:text="${item.weather.getName()}"></td>
+                    <td th:text="${item.transport.getName()}"></td>
+
                     <!--<td th:text="${item.travelZone.getName()}"></td>-->
                 </tr>
                 </tbody>

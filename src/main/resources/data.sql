@@ -50,8 +50,8 @@ insert into TravelZone( name) values ( 'non shengen');
 insert into PersonType(name) values ('child');
 insert into PersonType(name) values ('woman');
 insert into PersonType(name) values ('man');
-insert into PersonType(name) values ('not gender related');
-insert into PersonType(name) values ('not age related');
+insert into PersonType(name) values ('as a couple');
+insert into PersonType(name) values ('the family (with children)');
 
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 1,'t-shirt','blue', 1, true,10,2,3);
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 1,'t-shirt','red', 1, true,10,2,2);
@@ -93,7 +93,7 @@ INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency,
 
 INSERT INTO item (category_id, transport_id, journeyType_id, weather_id, personType_id, itemName, itemColor, dayDependency) VALUES (7, 1, 10, 6, 4, 'phone charger', '', false);
 INSERT INTO item (category_id, transport_id, journeyType_id, weather_id, personType_id, itemName, itemColor, dayDependency) VALUES (4, 1, 10, 6, 4, 'hairspray', '', false);
-
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 1,'underwear','white', 1, true,10,6,3);
 
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 1, 1);
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 2, 1);
