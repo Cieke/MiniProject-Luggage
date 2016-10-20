@@ -52,6 +52,8 @@ insert into PersonType(name) values ('woman');
 insert into PersonType(name) values ('man');
 insert into PersonType(name) values ('as a couple');
 insert into PersonType(name) values ('the family (with children)');
+insert into PersonType(name) values ('not person related');
+
 
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 1,'t-shirt','blue', 1, true,10,2,3);
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 1,'t-shirt','red', 1, true,10,2,2);
@@ -87,13 +89,18 @@ INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency,
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 3,'lipstick','red', 1, false,10,6,2);
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 10,'identity papers','', 1, false,10,6,4);
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 10,'international passport','', 1, false,10,6,4);
-INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'34','none', 1, false,10,3,4);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'winter hat','none', 1, false,10,3,4);
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 5,'shampoo','',1, false,10,6,5);
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 5,'toothpaste','', 1, false,10,6,5);
 
-INSERT INTO item (category_id, transport_id, journeyType_id, weather_id, personType_id, itemName, itemColor, dayDependency) VALUES (7, 1, 10, 6, 4, 'phone charger', '', false);
+INSERT INTO item (category_id, transport_id, journeyType_id, weather_id, personType_id, itemName, itemColor, dayDependency) VALUES (7, 1, 10, 6, 6, 'phone charger', '', false);
 INSERT INTO item (category_id, transport_id, journeyType_id, weather_id, personType_id, itemName, itemColor, dayDependency) VALUES (4, 1, 10, 6, 4, 'hairspray', '', false);
 INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id) VALUES ( 1,'underwear','white', 1, true,10,6,3);
+
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'winter coat','dark', 1, false,10,3,4);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'scarf','none', 1, false,10,3,4);
+INSERT INTO item (category_id, itemName, itemColor, transport_id, dayDependency, journeyType_id, weather_id, personType_id)VALUES ( 1,'socks','none', 1, true,10,3,4);
+
 
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 1, 1);
 INSERT INTO ZoneItemList(item_id, zone_id) VALUES ( 2, 1);
