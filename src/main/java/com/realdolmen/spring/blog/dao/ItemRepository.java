@@ -20,15 +20,7 @@ public interface ItemRepository extends JpaRepository<Item, Long> {
             )
     List<Item> retrieveJourneyItems(Long transportId, Long typeId, Long weatherId); //, Long travelZoneId);
 
-    @Query("SELECT i FROM Item i where (i.category.id = ?1 ) ")
+    @Query("SELECT i FROM Item i where (i.category.id = ?1 ) order by i.category.id ")
     List<Item> findByCategory_id(Long id);
 }
 
-
-//
-//SELECT *
-//        FROM luggage.item inner join luggage.zoneitemlist
-//        on item.id = zoneitemlist.item_id
-//        where zone_id = 1 or zone_id = 2
-//        and transport_id = 1 or transport_id = 7
-//        ;

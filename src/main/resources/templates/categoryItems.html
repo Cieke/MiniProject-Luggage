@@ -57,11 +57,11 @@
 
                     <th>Item </th>
                     <th>Color</th>
-                    <th>Pieces</th>
-                    <th>Transport dependency</th>
+                    <th>Day <br/>dependent</th>
+                    <th>Transport <br/>dependent</th>
 
-                    <th>Type of Journey</th>
-                    <th>Weather Conditions</th>
+                    <th>Journey <br/>dependent</th>
+                    <th>Weather <br/>dependency</th>
                     <th>Travel Zone</th>
                 </tr>
                 </thead>
@@ -71,7 +71,7 @@
                 <tr>
                     <td th:text="${item.itemName}"></td>
                     <td th:text="${item.itemColor}"></td>
-                    <td th:text="${item.dayDependency}"></td>
+                    <td th:text="${item.dayDependency.name}"></td>
                     <!--day dependency: boolean times days-->
                     <td th:text="${item.transport.name}"></td>
 
