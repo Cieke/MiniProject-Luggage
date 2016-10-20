@@ -28,7 +28,8 @@ public class Item {
 
     private String itemColor;
 
-    private Boolean dayDependency;
+    @ManyToOne
+    private DayDependency dayDependency;
 
     @ManyToOne
     private Transport transport;
@@ -77,11 +78,11 @@ public class Item {
         this.itemColor = itemColor;
     }
 
-    public Boolean getDayDependency() {
+    public DayDependency getDayDependency() {
         return dayDependency;
     }
 
-    public void setDayDependency(Boolean dayDependency) {
+    public void setDayDependency(DayDependency dayDependency) {
         this.dayDependency = dayDependency;
     }
 

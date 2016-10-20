@@ -42,6 +42,9 @@ public class AddItemController {
     @Autowired
     TravelZoneRepository travelZoneRepository;
 
+    @Autowired
+    DayDependencyRepository dayDependencyRepository;
+
     @RequestMapping(method = RequestMethod.GET)
     public Item register(Model model){
         prepareDropDows(model);
@@ -61,6 +64,9 @@ public class AddItemController {
         model.addAttribute("PersonTypeList", personTypeList);
         List<TravelZone> travelZoneList = travelZoneRepository.findAll();
         model.addAttribute("TravelZoneList", travelZoneList);
+        List<DayDependency> dayDependencyList = dayDependencyRepository.findAll();
+        model.addAttribute("DayDependencyList", dayDependencyList);
+
     }
 
 
